@@ -12,10 +12,9 @@ public partial class Index : System.Web.UI.Page
 
     }
 
-    protected void applyGeographyBtn_Click(object sender, EventArgs e)
+    protected void agregarPaisesBtn_Click(object sender, EventArgs e)
     {
-        Global.examName = "Geography";
-        Response.Redirect("TakeExam.aspx");
+        Response.Redirect("http://localhost:53551/AgregarPais.aspx");
     }
 
     protected void applyScienceBtn_Click(object sender, EventArgs e)

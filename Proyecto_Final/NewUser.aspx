@@ -11,7 +11,7 @@
         <div>
             <html>
 	<head>
-		<title>EasyExams</title>
+		<title>V-Vuelos</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -28,7 +28,7 @@
 						<div class="inner">
 							<!-- Logo -->
 								<a href="About.aspx" class="logo">
-									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">EasyExams</span>
+									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 
 						</div>
@@ -38,7 +38,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Easy Exams - Adding a new user</h2>
+								<h2>V-Vuelos - Creando un nuevo Usuario</h2>
 								<form method="post" action="#">
 									<div class="field half first">
                                         <asp:TextBox ID="firstnameTxt" runat="server" placeholder="First Name"></asp:TextBox>
@@ -57,12 +57,18 @@
 									</div>
 									<div class="field half">
                                         <asp:DropDownList ID="tipouserTxt" placeholder="Type of User" runat="server">
-                                            <asp:ListItem>Admin</asp:ListItem>
-                                            <asp:ListItem>User</asp:ListItem>
+                                            <asp:ListItem Value="0">Administrador</asp:ListItem>
+                                            <asp:ListItem Value="1">Seguridad</asp:ListItem>
+                                            <asp:ListItem Value="2">Consecutivo</asp:ListItem>
+                                            <asp:ListItem Value="3">Mantenimiento</asp:ListItem>
+                                            <asp:ListItem Value="4">Consulta</asp:ListItem>
                                         </asp:DropDownList>
 									</div>
                                     <div class="field half first">
                                         <asp:TextBox ID="passwordTxt" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+									</div>
+                                    <div class="field half">
+                                        <asp:TextBox ID="nacionalidadTxt" runat="server" placeholder="Nacionalidad" TextMode="SingleLine"></asp:TextBox>
 									</div>
 									<ul class="actions">
                                         <asp:Button ID="createBtn" runat="server" type= "submit" class="special" Text="Create User" OnClick="createBtn_Click" />
@@ -71,7 +77,7 @@
 								</form>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Easy Exams Inc. 2018. All rights reserved</li>
+								<li>&copy; V-Vuelos Inc. 2018. All rights reserved</li>
 							</ul>
 						</div>
 					</footer>

@@ -11,13 +11,10 @@
         <div>
             <html>
 	<head>
-		<title>EasyExams-Home</title>
+		<title>V-Vuelos-Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
 		<!-- Wrapper -->
@@ -27,7 +24,7 @@
 						<div class="inner">
 							<!-- Logo -->
 								<a href="About.aspx" class="logo">
-									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">Easy Exams</span>
+									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 							<!-- Nav -->
 								<nav>
@@ -43,10 +40,10 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="IndexAdmin.aspx">Home</a></li>
-                            <li><a href="CreateExam.aspx">Create a New Exam</a></li>
-                            <li><a href="DeleteExam.aspx">Delete a Exam</a></li>
+                            <%--<li><a href="CreateExam.aspx">Menu de Seguridad</a></li>
+                            <li><a href="DeleteExam.aspx">Menu de Administracion</a></li>--%>
                             <li><a href="NewUser.aspx">Add a New User</a></li>
-                            <li><a href="DeleteUser.aspx">Delete a User</a></li>
+                            <%--<li><a href="DeleteUser.aspx">Delete a User</a></li>--%>
                             <li><a href="Login.aspx">Log Out</a></li>
                             <li><a href="About.aspx">About Us</a></li>
 						</ul>
@@ -56,9 +53,9 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>Welcome to Easy Exams, your evaluation platform<br />
-								designed by Kevin, Mauricio & Jorge</h1>
-								<p>Below you will find all the exams available for you. Right now, right here.</p>
+								<h1>Welcome to V-Vuelos</h1>
+								<p>Menus disponibles para este usuario:</p>
+                                <br />
 							</header>
 							<section class="tiles">
 								<article class="style1">
@@ -66,9 +63,9 @@
 										<img src="images/pic01.jpg" alt="" />
 									</span>
 									<a href="CreateExam.aspx">
-										<h2>Create a New Exam</h2>
+										<h2>Menu de Seguridad</h2>
 										<div class="content">
-											<p>Apply!</p>
+											<p>Ir!</p>
 										</div>
 									</a>
 								</article>
@@ -76,10 +73,10 @@
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
 									</span>
-									<a href="NewUser.aspx">
-										<h2>Add a new User</h2>
+									<a href="Index.aspx">
+										<h2>Menu de Administracion</h2>
 										<div class="content">
-											<p>Apply!</p>
+											<p>Ir!</p>
 										</div>
 									</a>
 								</article>
@@ -88,9 +85,9 @@
 										<img src="images/pic03.jpg" alt="" />
 									</span>
 									<a href="DeleteUser.aspx">
-										<h2>Delete a User</h2>
+										<h2>Menu de Consultas</h2>
 										<div class="content">
-											<p>Apply!</p>
+											<p>Ir!</p>
 										</div>
 									</a>
 								</article>
@@ -100,8 +97,8 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<%--<div class="inner">
-							<section>
+						<div class="inner">
+							<%--<section>
 								<h2>Get in touch</h2>
 								<form method="post" action="#">
 									<div class="field half first">
@@ -131,10 +128,11 @@
 									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
 								</ul>
 							</section>
+                            --%>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; V-Vuelos Inc. All rights reserved</li><%--<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>--%>
 							</ul>
-						</div>--%>
+						</div>
 					</footer>
 			</div>
 

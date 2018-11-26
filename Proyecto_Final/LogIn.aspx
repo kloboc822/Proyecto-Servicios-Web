@@ -5,7 +5,7 @@
 <form id="form1" runat="server">
 <html>
 	<head>
-		<title>EasyExams</title>
+		<title>V-Vuelos</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -22,7 +22,7 @@
 						<div class="inner">
 							<!-- Logo -->
 								<a href="About.aspx" class="logo">
-									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">EasyExams</span>
+									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 
 						</div>
@@ -32,7 +32,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Welcome to Easy Exams - Please Log In</h2>
+								<h2>Bienvenidos a V-Vuelos - Inicie Sesion</h2>
 								<form method="post" action="#">
 									<div class="field half first">
                                         <asp:TextBox ID="usernameTxt" runat="server" placeholder="Username"></asp:TextBox>
@@ -46,7 +46,7 @@
 								</form>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Easy Exams Inc. 2018. All rights reserved</li>
+								<li>&copy; V-Vuelos Inc. 2018. All rights reserved</li>
 							</ul>
 						</div>
 					</footer>

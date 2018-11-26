@@ -11,7 +11,7 @@
         <div>
             <html>
 	<head>
-		<title>EasyExams-Home</title>
+		<title>V-Vuelos-Menu de Administracion</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -27,7 +27,7 @@
 						<div class="inner">
 							<!-- Logo -->
 								<a href="About.aspx" class="logo">
-									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">Easy Exams</span>
+									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 							<!-- Nav -->
 								<nav>
@@ -52,8 +52,7 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>Welcome to Easy Exams, your evaluation platform<br />
-								designed by Kevin, Mauricio & Jorge</h1>
+								<h1>Menu de Administracion</h1>
 								<p>Below you will find all the exams available for you. Right now, right here.</p>
 							</header>
 							
@@ -64,9 +63,9 @@
 										<img src="images/pic14.jpg" alt="" />
 									</span>
 									<a> 
-										<h2>Geography</h2>
+										<h2>Agregar Paises</h2>
 										<div class="content">
-											 <asp:Button ID="applyGeographyBtn" runat="server" class = "special" Text="Apply" OnClick="applyGeographyBtn_Click"/>
+											 <asp:Button ID="agrergarPaisesBtn" runat="server" class = "special" Text="Agregar" OnClick="agregarPaisesBtn_Click"/>
 										</div>
                                        
 									</a>
@@ -102,8 +101,8 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<%--<div class="inner">
-							<section>
+						<div class="inner">
+							<%--<section>
 								<h2>Get in touch</h2>
 								<form method="post" action="#">
 									<div class="field half first">
@@ -133,10 +132,11 @@
 									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
 								</ul>
 							</section>
+                            --%>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; V-Vuelos Inc. All rights reserved</li><%--<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>--%>
 							</ul>
-						</div>--%>
+						</div>
 					</footer>
 			</div>
 

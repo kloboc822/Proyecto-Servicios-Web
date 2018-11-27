@@ -25,6 +25,7 @@ public partial class AgregarPais : System.Web.UI.Page
         {
             Nombretxt.Text = "";
             SelectImag.Attributes.Clear();
+            ImagenPais.ImageUrl = "~/images/search-engine-optimisation-settings-17.png";
         }
         else
         {
@@ -68,5 +69,10 @@ public partial class AgregarPais : System.Web.UI.Page
                 Response.Redirect("http://localhost:53551/Index.aspx");
             }
         }
+    }
+
+    protected void cancelarBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("http://localhost:53551/Index.aspx");
     }
 }

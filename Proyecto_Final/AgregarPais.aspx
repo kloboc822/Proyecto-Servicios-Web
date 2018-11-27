@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AgregarPais.aspx.cs" Inherits="AgregarPais" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AgregarPais.aspx.cs" Inherits="AgregarPais" %>
 
 <!DOCTYPE html>
 
@@ -35,10 +36,10 @@
                                 <h1>Agregar País: </h1>
 								<h2>Seleccione el código del país que desea agregar:   </h2>
                                 <div class="field half first">
-                                <asp:DropDownList ID="Cod_pais" placeholder="Seleccionar" runat="server" DataSourceID="SqlDataSource1" DataTextField="cod_consecutivo" DataValueField="cod_consecutivo" AutoPostBack="True">
+                                <asp:DropDownList ID="Cod_pais" placeholder="Seleccionar" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo" AutoPostBack="True">
                                     <asp:ListItem>Seleccionar</asp:ListItem>
                                     </asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString %>" SelectCommand="SELECT [cod_consecutivo] FROM [CONSECUTIVO] WHERE ([descripcion] = @descripcion)">
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT [codigo] FROM [CODIGOS] WHERE ([descripcion] = @descripcion)">
                                         <SelectParameters>
                                             <asp:QueryStringParameter DefaultValue="PAIS" Name="descripcion" QueryStringField="PAIS" Type="String" />
                                         </SelectParameters>
@@ -65,9 +66,12 @@
                                     <br />
                                     <asp:Image ID="ImagenPais" runat="server" Height="170px" ImageUrl="~/images/search-engine-optimisation-settings-17.png" Width="170px" />
                                 </div>
-                                <div class="field">
+                                <div class="first half field">
                                        <asp:Button ID="SubirBtn" runat="server" type= "submit" class="special" Text="Subir Imagen" OnClick="SubirBtn_Click" />                                 
 								</div>
+                                <div class="first half field">
+                                    <asp:Button ID="cancelarBtn" runat="server" Text="Cancelar" OnClick="cancelarBtn_Click" />
+                                </div>
                                 <ul class="actions">
                                     
                                         <asp:Button ID="AgregarBtn" runat="server" type= "submit" class="special" Text="Agregar País" OnClick="AgregarBtn_Click" Visible="False" />

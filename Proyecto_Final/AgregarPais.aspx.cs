@@ -12,8 +12,8 @@ public partial class AgregarPais : System.Web.UI.Page
     static byte[] ImagenOriginal;
     protected void Page_Load(object sender, EventArgs e)
     {
-    }
 
+    }
 
     protected void SubirBtn_Click(object sender, EventArgs e)
     {
@@ -64,7 +64,7 @@ public partial class AgregarPais : System.Web.UI.Page
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
             if (resultado.Equals("País agregado con éxito."))
             {
-                Response.Redirect("http://localhost:53551/Index.aspx");
+                Response.Redirect("http://localhost:53551/IndexPaises.aspx");
             }
         }
     }

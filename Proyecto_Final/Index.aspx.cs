@@ -17,10 +17,9 @@ public partial class Index : System.Web.UI.Page
         Response.Redirect("http://localhost:53551/IndexPaises.aspx");
     }
 
-    protected void applyScienceBtn_Click(object sender, EventArgs e)
+    protected void PuertasBtn_Click(object sender, EventArgs e)
     {
-        Global.examName = "Science";
-        Response.Redirect("TakeExam.aspx");
+        Response.Redirect("http://localhost:53551/IndexPuertas.aspx");
     }
 
     protected void applyMathBtn_Click(object sender, EventArgs e)

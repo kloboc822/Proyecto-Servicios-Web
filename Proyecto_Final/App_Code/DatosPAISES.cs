@@ -109,7 +109,7 @@ public class DatosPAISES
         catch (Exception e)
         {
             string excepcion = e.ToString();
-            resultado = "Hubo un problema con la conexión, informe a soporte técnico [BP_obtenerDatosModificar]";
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico";
             return resultado;
         }
     }

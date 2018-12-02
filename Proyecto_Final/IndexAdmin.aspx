@@ -29,7 +29,7 @@
 							<!-- Nav -->
 								<nav>
 									<ul>
-										<li><a href="#menu">Menu</a></li>
+										<li><a href="#menu">Menú</a></li>
 									</ul>
 								</nav>
 						</div>
@@ -39,7 +39,7 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="IndexAdmin.aspx">Home</a></li>
+							<li><a href="IndexAdmin.aspx">Página principal</a></li>
                             <%--<li><a href="CreateExam.aspx">Menu de Seguridad</a></li>
                             <li><a href="DeleteExam.aspx">Menu de Administracion</a></li>--%>
                             <li><a href="NewUser.aspx">Add a New User</a></li>
@@ -53,8 +53,8 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>Welcome to V-Vuelos</h1>
-								<p>Menus disponibles para este usuario:</p>
+								<h1>Bienvenido a V-Vuelos</h1>
+								<p>Menús disponibles para este usuario:</p>
                                 <br />
 							</header>
 							<section class="tiles">
@@ -63,7 +63,7 @@
 										<img src="images/pic01.jpg" alt="" />
 									</span>
 									<a href="CreateExam.aspx">
-										<h2>Menu de Seguridad</h2>
+										<h2>Menú de Seguridad</h2>
 										<div class="content">
 											<p>Ir!</p>
 										</div>
@@ -74,23 +74,23 @@
 										<img src="images/pic02.jpg" alt="" />
 									</span>
 									<a href="Index.aspx">
-										<h2>Menu de Administracion</h2>
+										<h2>Menú de Administración</h2>
 										<div class="content">
 											<p>Ir!</p>
 										</div>
 									</a>
 								</article>
-								<article class="style3">
+								<%--<article class="style3">
 									<span class="image">
 										<img src="images/pic03.jpg" alt="" />
 									</span>
 									<a href="DeleteUser.aspx">
-										<h2>Menu de Consultas</h2>
+										<h2>Menú de Consultas</h2>
 										<div class="content">
 											<p>Ir!</p>
 										</div>
 									</a>
-								</article>
+								</article>--%>
 							</section>
 						</div>
 					</div>

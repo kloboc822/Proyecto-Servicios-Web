@@ -1,16 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AgregarPuerta.aspx.cs" Inherits="AgregarPuerta" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ModificarPuerta.aspx.cs" Inherits="ModificarPuerta" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         <div>
@@ -62,18 +57,15 @@
 				<!-- Main -->
                 <asp:Panel ID="main" runat="server">
                     <asp:Panel ID="Panel1" class="inner" runat="server">
-                        <h1>Agregar Puerta</h1>
+                        <h1>Modificar Puerta</h1>
 						<div class="field half first">
-                             <asp:DropDownList ID="Cod_puerta" placeholder="Seleccionar" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo">
-                             <asp:ListItem>Seleccionar</asp:ListItem>
-                             </asp:DropDownList>
-						     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT [codigo] FROM [CODIGOS] WHERE ([descripcion] = @descripcion)">
-                                 <SelectParameters>
-                                     <asp:QueryStringParameter DefaultValue="PUERTA" Name="descripcion" QueryStringField="PUERTA" Type="String" />
-                                 </SelectParameters>
-                             </asp:SqlDataSource>
+                            <asp:TextBox ID="Cod_puerta" runat="server" Enabled="False"></asp:TextBox>
+						</div>
+                        <div class="field">
+                            <asp:TextBox ID="Estado_puerta" runat="server" Enabled="False"></asp:TextBox>
 						</div>
 						<div class="field">
+                            <h2>Modificar estado</h2>
                             <asp:DropDownList ID="detalleTxt" runat="server">
                                 <asp:ListItem>Estado de puerta</asp:ListItem>
                                 <asp:ListItem>Abierta</asp:ListItem>
@@ -82,7 +74,7 @@
 						</div>
                         <br />
                         <div class="first half field">
-                                <asp:Button ID="agregar" class="special" runat="server" Text="Agregar" OnClick="agregar_Click" />
+                                <asp:Button ID="modificar" class="special" runat="server" Text="Modificar" OnClick="modificar_Click"  />
                             </div>
                             <div class="first half field">
                                 <asp:Button ID="cancelar" runat="server" Text="Cancelar" OnClick="cancelar_Click" />
@@ -108,3 +100,4 @@
     </form>
 </body>
 </html>
+

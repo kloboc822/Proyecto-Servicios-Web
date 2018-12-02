@@ -29,6 +29,8 @@ public class Global
     public static string cod_pais = "";
     public static string nombre_pais = "";
     public static string imagen_pais = "";
+    public static string cod_puerta = "";
+    public static string detalle_puerta = "";
 
 
     public Global()

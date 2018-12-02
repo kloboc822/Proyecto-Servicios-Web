@@ -44,12 +44,12 @@ public partial class AgregarPuerta: System.Web.UI.Page
                 {
                     estado = false;
                 }
-                // Llama al procedimiento de DatosPIERTAS que inserta los datos en la BD
+                // Llama al procedimiento de DatosPUERTAS que inserta los datos en la BD
                 resultado = DatosPUERTAS.agregarPUERTA(Cod_puerta.SelectedValue,estado);
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
                 if (resultado.Equals("Puerta agregada con éxito."))
                 {
-                    Response.Redirect("http://localhost:53551/Index.aspx");
+                    Response.Redirect("http://localhost:53551/IndexPuertas.aspx");
                 }
             }
         }
@@ -57,6 +57,6 @@ public partial class AgregarPuerta: System.Web.UI.Page
 
     protected void cancelar_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://localhost:53551/Index.aspx");
+        Response.Redirect("http://localhost:53551/IndexPuertas.aspx");
     }
 }

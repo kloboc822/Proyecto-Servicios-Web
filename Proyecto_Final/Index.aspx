@@ -32,7 +32,7 @@
 							<!-- Nav -->
 								<nav>
 									<ul>
-										<li><a href="#menu">Menu</a></li>
+										<li><a href="#menu">Menú</a></li>
 									</ul>
 								</nav>
 						</div>
@@ -42,7 +42,7 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="Index.aspx">Home</a></li>
+							<li><a href="IndexAdmin.aspx">Página principal</a></li>
                             <li><a href="Login.aspx">Log Out</a></li>
                             <li><a href="About.aspx">About Us</a></li>
 						</ul>
@@ -52,8 +52,8 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>Menu de Administracion</h1>
-								<p>Below you will find all the exams available for you. Right now, right here.</p>
+								<h1>Menú de Administración</h1>
+								<p>Opciones disponibles para el menú administrativo.</p>
 							</header>
 							
                             <!--EXAMENES -->
@@ -63,7 +63,7 @@
 										<img src="images/pic14.jpg" alt="" />
 									</span>
 									<a> 
-										<h2>ADministrar Paises</h2>
+										<h2>Administrar Países</h2>
 										<div class="content">
 											 <asp:Button ID="PaisesBtn" runat="server" class = "special" Text="Ir" OnClick="PaisesBtn_Click"/>
 										</div>
@@ -75,9 +75,9 @@
 										<img src="images/pic02.jpg" alt="" />
 									</span>
 									<a>
-										<h2>Science</h2>
+										<h2>Administrar Puertas</h2>
 										<div class="content">
-											<asp:Button ID="applyScienceBtn" runat="server" class = "special" Text="Apply" OnClick="applyScienceBtn_Click"/>
+											<asp:Button ID="PuertasBtn" runat="server" class = "special" Text="Ir" OnClick="PuertasBtn_Click"/>
 										</div>
                                          
 									</a>

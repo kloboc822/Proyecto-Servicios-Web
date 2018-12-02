@@ -35,13 +35,13 @@
 								<h2>Bienvenidos a V-Vuelos - Inicie Sesion</h2>
 								<form method="post" action="#">
 									<div class="field half first">
-                                        <asp:TextBox ID="usernameTxt" runat="server" placeholder="Username"></asp:TextBox>
+                                        <asp:TextBox ID="usernameTxt" runat="server" placeholder="Usuario"></asp:TextBox>
 									</div>
 									<div class="field half">
-                                        <asp:TextBox ID="passwordTxt" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                                        <asp:TextBox ID="passwordTxt" runat="server" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
 									</div>
 									<ul class="actions">
-                                        <asp:Button ID="loginBtn" runat="server" type= "submit" class="special" Text="Log In" OnClick="loginBtn_Click" />
+                                        <asp:Button ID="loginBtn" runat="server" type= "submit" class="special" Text="Iniciar Sesión" OnClick="loginBtn_Click" />
 									</ul>
 								</form>
 							</section>

@@ -12,9 +12,9 @@ public partial class Index : System.Web.UI.Page
 
     }
 
-    protected void agregarPaisesBtn_Click(object sender, EventArgs e)
+    protected void PaisesBtn_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://localhost:53551/AgregarPais.aspx");
+        Response.Redirect("http://localhost:53551/IndexPaises.aspx");
     }
 
     protected void applyScienceBtn_Click(object sender, EventArgs e)

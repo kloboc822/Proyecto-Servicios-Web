@@ -63,9 +63,9 @@
 										<img src="images/pic14.jpg" alt="" />
 									</span>
 									<a> 
-										<h2>Agregar Paises</h2>
+										<h2>ADministrar Paises</h2>
 										<div class="content">
-											 <asp:Button ID="agrergarPaisesBtn" runat="server" class = "special" Text="Agregar" OnClick="agregarPaisesBtn_Click"/>
+											 <asp:Button ID="PaisesBtn" runat="server" class = "special" Text="Ir" OnClick="PaisesBtn_Click"/>
 										</div>
                                        
 									</a>
@@ -102,7 +102,7 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
-							<%--<section>
+                            <%--<section>
 								<h2>Get in touch</h2>
 								<form method="post" action="#">
 									<div class="field half first">

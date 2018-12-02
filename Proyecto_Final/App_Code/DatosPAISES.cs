@@ -12,7 +12,7 @@ public class DatosPAISES
     "user id=" + Global.database_user + ";password=" + Global.database_password + ";");
     static SqlCommand com;
 
-    public static string verificarPais(string codigo)
+    public static string verificarPais(string codigo, string nombre)
     {
 
         string sql;
@@ -23,13 +23,14 @@ public class DatosPAISES
         {
             conexion.Close();
             conexion.Open();
-            sql = "SELECT cod_pais FROM PAIS WHERE cod_pais = '" + codigo + "'";
+            sql = "SELECT * FROM PAIS WHERE cod_pais = '" + codigo +
+            "' or nombre = '" + nombre + "'";
             com = conexion.CreateCommand();
             com.CommandText = sql;
             rs = com.ExecuteReader();
             if (rs.Read())
             {
-                resultado = "El código seleccionado ya fue asignado a un país, por favor compruebe con soporte el código correspondiente";
+                resultado = "El código/nombre seleccionado ya fue asignado a un país, por favor compruebe con soporte el código correspondiente";
             }
             else
             {
@@ -73,8 +74,78 @@ public class DatosPAISES
         }
     }
 
+    public static string obtenerDatosModificar(string codigo)
+    {
+        string sql;
+        string resultado = "";
+        SqlDataReader rs;
+
+        try
+        {
+            conexion.Close();
+            conexion.Open();
+            sql = "SELECT * FROM PAIS WHERE cod_pais = '" + codigo + "'";
+            com = conexion.CreateCommand();
+            com.CommandText = sql;
+            rs = com.ExecuteReader();
+            if (rs.Read())
+            {
+                Global.cod_pais = rs[0].ToString();
+                Global.nombre_pais = rs[1].ToString();
+            }
+            conexion.Close();
+            conexion.Open();
+            sql = "SELECT imagen FROM PAIS WHERE cod_pais = '" + codigo + "'";
+            com = conexion.CreateCommand();
+            com.CommandText = sql;
+            byte[] bytes = (byte[])com.ExecuteScalar();
+            Global.imagen_pais = Convert.ToBase64String(bytes);
+            conexion.Close();
+            resultado = "Datos comprobados de forma correcta";
+            return resultado;
+
+
+        }
+        catch (Exception e)
+        {
+            string excepcion = e.ToString();
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico [BP_obtenerDatosModificar]";
+            return resultado;
+        }
+    }
+
+    public static string actualizarPais(byte[] imagen, string nombre, string codigo)
+    {
+        string resultado = "";
+
+        try
+        {
+            conexion.Close();
+
+            conexion.Open();
+            using (SqlCommand cmd =
+                new SqlCommand("UPDATE PAIS SET nombre=@nombre, imagen=@imagen" +
+                    " WHERE cod_pais=@cod_pais", conexion))
+            {
+                cmd.Parameters.AddWithValue("@cod_pais", codigo);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@imagen", imagen);
+                cmd.ExecuteNonQuery();
+            }
+
+            conexion.Close();
+            return "País actualizado exitosamente";
+        }
+        catch (Exception e)
+        {
+            string excepcion = e.ToString();
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+            return resultado;
+        }
+    }
 
 
 
 
-}
+
+    }

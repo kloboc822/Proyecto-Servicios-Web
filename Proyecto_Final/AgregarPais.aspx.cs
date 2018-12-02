@@ -10,7 +10,6 @@ using System.Drawing;
 public partial class AgregarPais : System.Web.UI.Page
 {
     static byte[] ImagenOriginal;
-    Bitmap ImagenOriginalBinaria;
     protected void Page_Load(object sender, EventArgs e)
     {
     }
@@ -19,9 +18,9 @@ public partial class AgregarPais : System.Web.UI.Page
     protected void SubirBtn_Click(object sender, EventArgs e)
     {
         //Valida que se haya elegido una imagen
-        string resultado = DatosPAISES.verificarPais(Cod_pais.SelectedValue);
+        string resultado = DatosPAISES.verificarPais(Cod_pais.SelectedValue, Nombretxt.Text);
         ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
-        if (resultado.Equals("El código seleccionado ya fue asignado a un país, por favor compruebe con soporte el código correspondiente"))
+        if (resultado.Equals("El código/nombre seleccionado ya fue asignado a un país, por favor compruebe con soporte el código correspondiente"))
         {
             Nombretxt.Text = "";
             SelectImag.Attributes.Clear();
@@ -39,7 +38,6 @@ public partial class AgregarPais : System.Web.UI.Page
                 int Tamanio = SelectImag.PostedFile.ContentLength;
                 ImagenOriginal = new byte[Tamanio];
                 SelectImag.PostedFile.InputStream.Read(ImagenOriginal, 0, Tamanio);
-                ImagenOriginalBinaria = new Bitmap(SelectImag.PostedFile.InputStream);
 
 
                 string ImagenDataURL64 = "data:image/jpg;base64, " + Convert.ToBase64String(ImagenOriginal);
@@ -73,6 +71,6 @@ public partial class AgregarPais : System.Web.UI.Page
 
     protected void cancelarBtn_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://localhost:53551/Index.aspx");
+        Response.Redirect("http://localhost:53551/IndexPaises.aspx");
     }
 }

@@ -1,5 +1,4 @@
-﻿
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AgregarPais.aspx.cs" Inherits="AgregarPais" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ModificarPais.aspx.cs" Inherits="ModificarPais" %>
 
 <!DOCTYPE html>
 
@@ -53,17 +52,10 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-                                <h1>Agregar País: </h1>
-								<h2>Seleccione el código del país que desea agregar:   </h2>
+                                <h1>Modificar País: </h1>
+								<h2>Código del país que se desea modificar:   </h2>
                                 <div class="field half first">
-                                <asp:DropDownList ID="Cod_pais" placeholder="Seleccionar" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo" AutoPostBack="True">
-                                    <asp:ListItem>Seleccionar</asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT [codigo] FROM [CODIGOS] WHERE ([descripcion] = @descripcion)">
-                                        <SelectParameters>
-                                            <asp:QueryStringParameter DefaultValue="PAIS" Name="descripcion" QueryStringField="PAIS" Type="String" />
-                                        </SelectParameters>
-                                    </asp:SqlDataSource>
+                                    <asp:TextBox ID="Cod_pais" runat="server" Enabled="False"></asp:TextBox>
                                 </div>
 				                <div class="field">
                                         <asp:TextBox ID="Nombretxt" runat="server" placeholder="Nombre del país"></asp:TextBox>                                  
@@ -87,14 +79,14 @@
                                     <asp:Image ID="ImagenPais" runat="server" Height="170px" ImageUrl="~/images/search-engine-optimisation-settings-17.png" Width="170px" />
                                 </div>
                                 <div class="first half field">
-                                       <asp:Button ID="SubirBtn" runat="server" type= "submit" class="special" Text="Subir Imagen" OnClick="SubirBtn_Click" />                                 
+                                       <asp:Button ID="SubirBtn" runat="server" type= "submit" class="special" Text="Subir Imagen" OnClick="SubirBtn_Click"  />                                 
 								</div>
                                 <div class="first half field">
-                                    <asp:Button ID="cancelarBtn" runat="server" Text="Cancelar" OnClick="cancelarBtn_Click" />
+                                    <asp:Button ID="cancelarBtn" runat="server" Text="Cancelar" OnClick="cancelarBtn_Click"  />
                                 </div>
                                 <ul class="actions">
                                     
-                                        <asp:Button ID="AgregarBtn" runat="server" type= "submit" class="special" Text="Agregar País" OnClick="AgregarBtn_Click" Visible="False" />
+                                        <asp:Button ID="ModificarBtn" runat="server" type= "submit" class="special" Text="Modificar País" Visible="False" OnClick="ModificarBtn_Click" />
 									</ul>
 							</section>
 							<asp:Label ID="Label1Txt" runat="server" Visible="False"></asp:Label>

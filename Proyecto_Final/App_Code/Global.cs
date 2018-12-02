@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Web;
 
 /// <summary>
@@ -24,6 +26,10 @@ public class Global
     public static int codExam = 0;
     public static string examName = "";
     public static int puntos = 0;
+    public static string cod_pais = "";
+    public static string nombre_pais = "";
+    public static string imagen_pais = "";
+
 
     public Global()
     {

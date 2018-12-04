@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <<html>
+            <html>
 	<head>
 		<title>Generic - Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />

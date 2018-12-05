@@ -56,7 +56,7 @@
             <!-- Main -->
        <asp:Panel ID="main" runat="server">
            <asp:Panel ID="Panel1" class="inner" runat="server">
-                  <h1>Información del consecutivo</h1>
+                  <h1>Información del consecutiv</h1>
                   <div class="field">
                         <h2>Descripcion:</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:DropDownList ID="dplDesc" runat="server">

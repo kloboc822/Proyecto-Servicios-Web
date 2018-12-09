@@ -64,6 +64,7 @@ public partial class AgregarPais : System.Web.UI.Page
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
             if (resultado.Equals("País agregado con éxito."))
             {
+                DatosPAISES.sumarConsecutivoPais();
                 Response.Redirect("http://localhost:53551/IndexPaises.aspx");
             }
         }

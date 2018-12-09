@@ -17,24 +17,44 @@ public partial class aerolineas : System.Web.UI.Page
    SqlConnection con = new SqlConnection("Data Source = localhost\\SQLEXPRESS; Initial Catalog = Vuelos; Integrated Security = True");
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Page.IsPostBack) {
-
-            LoadImages();
-
-        }
+       
     }
 
-    private void LoadImages() {
+   
+    private void sumarConsecutivo() {
+
+        int sum = 0;
+        int sum2 = 0;
+        string pre = "";
 
         con.Open();
-
-        SqlCommand cmd = new SqlCommand("Select * from AEROLINEA", con);
-        SqlDataReader rdr = cmd.ExecuteReader();
-        GridView1.DataSource = rdr;
-        GridView1.DataBind();
-
+        SqlCommand comando = new SqlCommand(String.Format("Select prefijo,next_conse from CONSECUTIVO where descripcion = '{0}'", "Aerolinea"), con);
+        SqlDataReader red = comando.ExecuteReader();
+        while (red.Read())
+        {
+            pre = red.GetString(0);
+            sum = red.GetInt32(1);
+        }
         con.Close();
 
+        //Agregar a tabla de codigos usados
+        con.Open();
+        SqlCommand com2 = new SqlCommand("INSERT INTO CODIGOS(codigo,descripcion) VALUES(@codigo, @descripcion)", con);
+        com2.Parameters.AddWithValue("@codigo", pre + sum);
+        com2.Parameters.AddWithValue("@descripcion", "Aerolinea");
+        com2.ExecuteNonQuery();
+        con.Close();
+
+        sum2 = sum + 1;
+
+
+        //actualizar el nuevo consecutivo disponible
+        con.Open();
+        SqlCommand com = new SqlCommand("UPDATE CONSECUTIVO SET next_conse=@a1, codigo=@a2 where descripcion = 'Aerolinea'", con);
+        com.Parameters.AddWithValue("a1", sum2);
+        com.Parameters.AddWithValue("a2", pre+sum2);
+        com.ExecuteNonQuery();
+        con.Close();
     }
 
     protected void btnUpload_Click(object sender, EventArgs e)
@@ -98,8 +118,12 @@ public partial class aerolineas : System.Web.UI.Page
                     cmd.ExecuteNonQuery();
                     con.Close();
 
+                    sumarConsecutivo();
+                    dplCodi.DataBind();
                     ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Image uploaded')", true);
-                    LoadImages();
+                  
+
+
                 }
 
                 else
@@ -113,22 +137,14 @@ public partial class aerolineas : System.Web.UI.Page
         }
     }
 
-    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+
+
+
+
+
+
+    protected void btnCancel_Click(object sender, EventArgs e)
     {
-
-    }
-
-    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    {
-        Label l1 = GridView1.Rows[e.RowIndex].FindControl("stlbl") as Label;
-        con.Open();
-        SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "Delete from [Aerolinea] where cod_aerol = @cod_aerol";
-        cmd.Parameters.AddWithValue("@cod_aerol", l1.Text);
-        cmd.Connection = con;
-        cmd.ExecuteNonQuery();
-        con.Close();
-        LoadImages();
-
+        Response.Redirect("verAerolineas.aspx");
     }
 }

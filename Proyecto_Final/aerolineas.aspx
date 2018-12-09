@@ -61,7 +61,7 @@
                             <h2>Codigo:</h2>&nbsp;&nbsp; 
                             <asp:DropDownList ID="dplCodi" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo">
                             </asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="select codigo from codigos where descripcion = 'Aerolinea'"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="select codigo from consecutivo where descripcion = 'Aerolinea'"></asp:SqlDataSource>
                             <br />
                         </div>
                         <div class="field first half">
@@ -69,40 +69,18 @@
                                 <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                                 <br />
                                 <br />
-                                <h2>Imagen:</h2>&nbsp;&nbsp;
+                                <h2>Imagen:</h2>
                                 <asp:FileUpload ID="FileUpload1" runat="server" />
                                 <br />
                                 <br />
-                        
-                        
-                        &nbsp;<asp:Button ID="btnUpload" runat="server" OnClick="btnUpload_Click" Text="Add New" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                        </div>
+                         <div class="field">
+                        &nbsp;<asp:Button ID="btnUpload" runat="server" OnClick="btnUpload_Click" Text="Agregar" class="special" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancelar" class="special" />
+                            <br />
+                                </div>
                             </div>
-                            &nbsp;
-                        <div class="field align-center">
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="392px">
-                                <Columns>
-                                    <asp:TemplateField HeaderText="Codigo Aerolinea">
-                                        <ItemTemplate>
-                                            <asp:Label ID="stlbl" runat="server" Text='<%# Eval("cod_aerol") %>' />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <%-- <asp:BoundField DataField="cod_aerol" HeaderText="Codigo Aerolinea"/>--%>
-                                    <asp:BoundField DataField="nombre" HeaderText="Nombre" />
-                                    <asp:TemplateField HeaderText="Image">
-                                        <ItemTemplate>
-                                            <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl='<%#"data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("imagen")) %>' Width="100px" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Action">
-                                        <ItemTemplate>
-                                            <asp:Button ID="b1" runat="server" CommandName="Delete" Text="Delete" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                            </asp:GridView>
-                            </div>
-                   </asp:Panel>
+                            &nbsp;<br /> &nbsp;</asp:Panel>
                 </asp:Panel>
 
 				<!-- Footer -->
@@ -116,9 +94,27 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
+       
+
 	</body>
 </html>
 
     </form>
+
+
+
+<%--    <footer align="center">
+
+ <div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'de,en,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style type="text/css">
+		.goog-te-banner-frame.skiptranslate{display:none!important;}
+		body{top:0px!important;}
+		</style>
+</footer>--%>
+
 </body>
 </html>

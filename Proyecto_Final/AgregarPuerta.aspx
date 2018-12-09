@@ -67,10 +67,7 @@
                              <asp:DropDownList ID="Cod_puerta" placeholder="Seleccionar" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo">
                              <asp:ListItem>Seleccionar</asp:ListItem>
                              </asp:DropDownList>
-						     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT [codigo] FROM [CODIGOS] WHERE ([descripcion] = @descripcion)">
-                                 <SelectParameters>
-                                     <asp:QueryStringParameter DefaultValue="PUERTA" Name="descripcion" QueryStringField="PUERTA" Type="String" />
-                                 </SelectParameters>
+						     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT codigo FROM consecutivo WHERE descripcion = 'Puertas del Aeropuerto'">
                              </asp:SqlDataSource>
 						</div>
 						<div class="field">

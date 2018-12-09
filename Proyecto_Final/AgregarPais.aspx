@@ -59,10 +59,7 @@
                                 <asp:DropDownList ID="Cod_pais" placeholder="Seleccionar" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo" AutoPostBack="True">
                                     <asp:ListItem>Seleccionar</asp:ListItem>
                                     </asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT [codigo] FROM [CODIGOS] WHERE ([descripcion] = @descripcion)">
-                                        <SelectParameters>
-                                            <asp:QueryStringParameter DefaultValue="PAIS" Name="descripcion" QueryStringField="PAIS" Type="String" />
-                                        </SelectParameters>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT codigo FROM consecutivo WHERE descripcion = 'Paises'">
                                     </asp:SqlDataSource>
                                 </div>
 				                <div class="field">

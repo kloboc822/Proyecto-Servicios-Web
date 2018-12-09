@@ -14,7 +14,6 @@ public partial class showCon : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-
         if (!Page.IsPostBack)
         {
 
@@ -50,22 +49,22 @@ public partial class showCon : System.Web.UI.Page
 
     }
 
-    //Hace que el boton delete borre la fila y tambien actualice la base de datos
-    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    {
-        Label l1 = GridView1.Rows[e.RowIndex].FindControl("stlbl") as Label;
-        con.Open();
-        SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "Delete from [CONSECUTIVO] where prefijo = @prefijo";
-        cmd.Parameters.AddWithValue("@prefijo", l1.Text);
-        cmd.Connection = con;
-        cmd.ExecuteNonQuery();
-        con.Close();
-        LoadData();
-    }
-
     protected void Button1_Click(object sender, EventArgs e)
     {
         Response.Redirect("Consecutivos.aspx");
+    }
+
+    protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "seditar")
+        {
+            int crow;
+            crow = Convert.ToInt32(e.CommandArgument.ToString());
+            Session["vDes"] = GridView1.Rows[crow].Cells[1].Text;
+            Session["vCon"] = GridView1.Rows[crow].Cells[2].Text;
+
+            Response.Redirect("editConsecutivo.aspx");
+
+        }
     }
 }

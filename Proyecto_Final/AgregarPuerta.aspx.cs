@@ -49,6 +49,7 @@ public partial class AgregarPuerta: System.Web.UI.Page
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
                 if (resultado.Equals("Puerta agregada con éxito."))
                 {
+                    DatosPUERTAS.sumarConsecutivoPuerta();
                     Response.Redirect("http://localhost:53551/IndexPuertas.aspx");
                 }
             }

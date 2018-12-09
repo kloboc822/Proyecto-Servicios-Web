@@ -5,12 +5,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    </head>
+  
+    <style type="text/css">
+        .auto-style1 {
+            left: 0px;
+            top: 0px;
+            height: 112px;
+        }
+        .auto-style3 {
+            left: 0px;
+            top: -1px;
+            height: 157px;
+        }
+        .auto-style4 {
+            left: 0px;
+            top: 0px;
+            height: 172px;
+        }
+        .auto-style5 {
+            left: 0px;
+            top: 0px;
+            height: 109px;
+        }
+        .auto-style6 {
+            left: 0px;
+            top: 0px;
+            height: 124px;
+        }
+    </style>
+  
+</head>
 <body>
     <form id="form1" runat="server">
-        
-    <html>
-	<head>
+        <html>
+
+     <head>
 		<title>Generic - Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,8 +48,10 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
-	<body>
-		<!-- Wrapper -->
+
+<body>
+
+    <!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
@@ -53,77 +84,70 @@
 							<li><a href="elements.html">Elements</a></li>
 						</ul>
 					</nav>
-            <!-- Main -->
-       <asp:Panel ID="main" runat="server">
+
+ <!-- Main -->
+ <asp:Panel ID="main" runat="server">
            <asp:Panel ID="Panel1" class="inner" runat="server">
-                  <h1>Información del consecutiv</h1>
-                  <div class="field">
-                        <h2>Descripcion:</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:DropDownList ID="dplDesc" runat="server">
-                            <asp:ListItem Value="Aerolinea">Aerolinea</asp:ListItem>
-                            <asp:ListItem Value="Paises">Paises</asp:ListItem>
-                            <asp:ListItem Value="Puertas del Aeropuerto">Puertas del Aeropuerto</asp:ListItem>
-                            <asp:ListItem Value="Compra de Boletos">Compra de Boletos</asp:ListItem>
-                            <asp:ListItem Value="Reservacion de Boletos">Reservacion de Boletos</asp:ListItem>
-                            <asp:ListItem Value="Vuelos">Vuelos</asp:ListItem>
-                        </asp:DropDownList>
-                        <br />
-                    </div>
-                    <div class="field">
-                        <h2>Consecutivo:</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                        <asp:TextBox ID="txtCon" runat="server"></asp:TextBox>
-                        <br />
-                    </div>
-                    <div class="field">
-                        <h2>Prefijo Existente:</h2>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnEna" runat="server" OnClick="btnEna_Click" Text="Si"  />
-                &nbsp;<asp:DropDownList ID="dplPre" runat="server" DataSourceID="SqlDataSource1" DataTextField="prefijo" DataValueField="prefijo" Enabled="False">
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT [prefijo] FROM [CONSECUTIVO]"></asp:SqlDataSource>
-                        <br />
-                    </div>
-                    <div class="field">
-                        <h2>Prefijo:</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="txtPre" runat="server"></asp:TextBox>
-                        <br />
-                    </div>
-                    <div class="field">
-                        <h2>Rango Inicial:</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="txtRanIni" runat="server"></asp:TextBox>
-                        <br />
-                    </div>
-                    <div class="field">
-                        <h2>Rango Final:</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="txtRanFin" runat="server"></asp:TextBox>
-                        <br />
-                    </div>
-                        <br />
-                    <div class="field">
-                        <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" class="special" />
-    
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnVerDa" runat="server" Enabled="False" OnClick="btnVerDa_Click" Text="VerDatos" class="special" />
-    
-                    &nbsp;
-                        <asp:Button ID="btnVer" runat="server" OnClick="btnVer_Click" Text="Ver Consecutivos" class="special"/>
-                    </div>
-                    </asp:Panel>
-                </asp:Panel>
+               <h1>Crear Consecutivo</h1>
+        
+         <!--Dropdownlist-->      
+         <div class="auto-style5">
+        <h2>Descripcion:<asp:DropDownList ID="dplDesc" runat="server" Width="207px">
+            <asp:ListItem Value="Aerolinea">Aerolinea</asp:ListItem>
+            <asp:ListItem Value="Paises">Paises</asp:ListItem>
+            <asp:ListItem Value="Puertas del Aeropuerto">Puertas del Aeropuerto</asp:ListItem>
+            <asp:ListItem Value="Compra de Boletos">Compra de Boletos</asp:ListItem>
+            <asp:ListItem Value="Reservacion de Boletos">Reservacion de Boletos</asp:ListItem>
+            <asp:ListItem Value="Vuelos">Vuelos</asp:ListItem>
+            </asp:DropDownList>
+             </h2>
+        <br />
+          </div>
 
-				<!-- Footer -->
-                
-			</div>
+               <div class="auto-style1">
+                 <h2>Consecutivo:<asp:TextBox ID="txtCon" runat="server" Height="19px" Width="281px"></asp:TextBox>
+                   </h2>
+                  <br />
+                 </div>
 
-		<!-- Scripts -->
+                <div class="auto-style3">
+                    <asp:CheckBox ID="chkPrefijo" runat="server" AutoPostBack="true" OnCheckedChanged="chkPrefijo_CheckedChanged" Text="UsarPrefijo" />
+                    <br />
+                    <h2>Prefijo:<asp:TextBox ID="txtPre" runat="server" Height="19px" Width="276px"></asp:TextBox>
+                    </h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br />
+                </div>
+                <div class="auto-style4">
+                    <asp:CheckBox ID="chkRango" runat="server" AutoPostBack="true" Text="UsarRango" OnCheckedChanged="chkRango_CheckedChanged" />
+                    <br />
+                    <h2>Rango Inicial:<asp:TextBox ID="txtRanIni" runat="server" Height="24px" Width="271px"></asp:TextBox>
+                    </h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br /> </div>
+                    
+               <div class="auto-style6"><h2>Rango Final:<asp:TextBox ID="txtRanFin" runat="server" Height="17px" Width="284px"></asp:TextBox>
+                    </h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></div>
+
+                <div class="field">
+                       <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" Width="156px" class="special" />
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <asp:Button ID="btnVer" runat="server" class="special" OnClick="btnVer_Click" Text="Ver Consecutivos" />
+                       <br />
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </div>
+
+               </asp:Panel>
+              </asp:Panel>  
+</div>
+    <!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
-	</body>
-</html>
+</body
 
+        </html>
     </form>
 </body>
 </html>

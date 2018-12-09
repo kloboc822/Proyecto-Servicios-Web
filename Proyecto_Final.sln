@@ -24,14 +24,26 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Proyecto_Final", "Proyecto_
 		SlnRelativePath = "Proyecto_Final\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{B5625F69-FFF3-43E5-9A1F-62325BCBD626} = {B5625F69-FFF3-43E5-9A1F-62325BCBD626}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplicacionWSPagos", "AplicacionWSPagos\AplicacionWSPagos.csproj", "{B5625F69-FFF3-43E5-9A1F-62325BCBD626}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3028107D-5DB7-47E1-BFF6-03AC96EF5919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3028107D-5DB7-47E1-BFF6-03AC96EF5919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3028107D-5DB7-47E1-BFF6-03AC96EF5919}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3028107D-5DB7-47E1-BFF6-03AC96EF5919}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B5625F69-FFF3-43E5-9A1F-62325BCBD626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5625F69-FFF3-43E5-9A1F-62325BCBD626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5625F69-FFF3-43E5-9A1F-62325BCBD626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5625F69-FFF3-43E5-9A1F-62325BCBD626}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

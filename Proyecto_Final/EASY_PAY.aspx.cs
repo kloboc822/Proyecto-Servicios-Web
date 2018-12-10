@@ -15,8 +15,16 @@ public partial class EASY_PAY : System.Web.UI.Page
     protected void pagar_Click(object sender, EventArgs e)
     {
         string resultado = "";
-        WebServicePago.Service1Client servicio = new WebServicePago.Service1Client();
-        resultado = servicio.GetCuenta(Int32.Parse(CodTxt.Text), Int32.Parse(CuentaTxt.Text), ContrasenaTxt.Text, 500);
-        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
+        int temp = 0;
+        if (!int.TryParse(CodTxt.Text, out temp) || !int.TryParse(CuentaTxt.Text, out temp))
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Sólo se admiten números en los campos número de cuenta y código de seguridad')", true);
+        }
+        else
+        {
+            WebServicePago.Service1Client servicio = new WebServicePago.Service1Client();
+            resultado = servicio.GetCuenta(Int32.Parse(CodTxt.Text), Int32.Parse(CuentaTxt.Text), ContrasenaTxt.Text, 500);
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
+        }
     }
 }

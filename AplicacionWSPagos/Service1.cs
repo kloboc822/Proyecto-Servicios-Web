@@ -42,6 +42,36 @@ namespace AplicacionWSPagos
                 return resultado;
             }
         }
+
+        private string MakePagoTarjeta(int fondo, int monto, int numtarjeta)
+        {
+            string resultado = "";
+            int nuevo_fondo = fondo - monto;
+            try
+            {
+                conexion.Close();
+
+                conexion.Open();
+                using (SqlCommand cmd =
+                    new SqlCommand("UPDATE TARJETAS SET fondo=@fondo" +
+                        " WHERE num_tarjeta=@num_tarjeta", conexion))
+                {
+                    cmd.Parameters.AddWithValue("@num_tarjeta", numtarjeta);
+                    cmd.Parameters.AddWithValue("@fondo", nuevo_fondo);
+                    cmd.ExecuteNonQuery();
+                }
+
+                conexion.Close();
+                return "Transacción exitosa";
+            }
+            catch (Exception e)
+            {
+                string excepcion = e.ToString();
+                resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+                return resultado;
+            }
+        }
+
         public string GetCuenta(int cod, int num_cuenta, string contrasena, int monto)
         {
             string sql;
@@ -69,6 +99,48 @@ namespace AplicacionWSPagos
                 else
                 {
                     resultado = "Número de cuenta/contraseña o código de seguridad inválidos";
+                }
+                conexion.Close();
+                return resultado;
+            }
+            catch (Exception e)
+            {
+                string excepcion = e.ToString();
+                resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+                return resultado;
+            }
+        }
+
+        public string GetTarjeta(int cod, int num_tarjeta, string nombre, int monto, int anyo, int mes, string tipo)
+        {
+            string sql;
+            SqlDataReader rs;
+            string resultado = "";
+            TARJETA pago = new TARJETA();
+            pago.cod_seguridad = cod;
+            pago.num_tarjeta = num_tarjeta;
+            pago.monto = monto;
+            pago.nombre = nombre;
+            pago.mes = mes;
+            pago.anyo = anyo;
+            pago.tipo = tipo;
+            try
+            {
+                conexion.Close();
+                conexion.Open();
+                sql = "SELECT * FROM TARJETAS WHERE CVV = '" + pago.cod_seguridad +
+                "' and num_tarjeta = '" + pago.num_tarjeta + "' and tarjethabiente = '" + pago.nombre + "' and mes = '" + pago.mes + "' and anyo = '" + pago.anyo + "' and tipo = " + pago.tipo + "";
+                com = conexion.CreateCommand();
+                com.CommandText = sql;
+                rs = com.ExecuteReader();
+                if (rs.Read())
+                {
+                    int fondo = Int32.Parse(rs[4].ToString());
+                    resultado = MakePagoTarjeta(fondo, pago.monto, pago.num_tarjeta);
+                }
+                else
+                {
+                    resultado = "Tarjeta inválida, por favor revise los datos e intente de nuevo";
                 }
                 conexion.Close();
                 return resultado;

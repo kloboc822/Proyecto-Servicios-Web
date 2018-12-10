@@ -1,0 +1,152 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Tarjeta.aspx.cs" Inherits="Tarjeta" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <<html>
+	<head>
+		<title>Generic - Phantom by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.aspx" class="logo">
+									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+                <asp:Panel ID="main" runat="server">
+                    <asp:Panel ID="Panel1" class="inner" runat="server">
+                        <h1>Pago por tarjeta</h1>
+                        <div class="field">
+                            <h2>Nombre del tarjethabiente</h2>
+                            <asp:TextBox ID="nombreTxt" runat="server" placeholder="Dueño"></asp:TextBox>
+                        </div>
+                        <div class="field">
+                            <h2>Número de tarjeta</h2>
+                            <asp:TextBox ID="tarjetaTxt" runat="server" placeholder="Número de tarjeta"></asp:TextBox>
+                        </div>
+                        <div class="field">
+                            <h2>Código de seguridad de la tarjeta</h2>
+                            <asp:TextBox ID="codTxt" runat="server" placeholder="CVV"></asp:TextBox>
+                        </div>
+                        <div class="field">
+                            <h2>Seleccione el método de pago</h2>
+                             <asp:DropDownList ID="TipoTxt" runat="server">
+                                 <asp:ListItem>Tipo de tarjeta</asp:ListItem>
+                                 <asp:ListItem>VISA</asp:ListItem>
+                                 <asp:ListItem>Mastercard</asp:ListItem>
+                                 <asp:ListItem>American Express</asp:ListItem>
+                             </asp:DropDownList>
+						</div>
+                        <br>
+                         </br>
+                        <h2>Seleccione el mes y año de expiración de la tarjeta</h2>
+						<div class="field half first">
+                            
+                             <asp:DropDownList ID="mesTxt" runat="server">
+                                 <asp:ListItem>Mes de expiración</asp:ListItem>
+                                 <asp:ListItem>01</asp:ListItem>
+                                 <asp:ListItem>02</asp:ListItem>
+                                 <asp:ListItem>03</asp:ListItem>
+                                 <asp:ListItem>04</asp:ListItem>
+                                 <asp:ListItem>05</asp:ListItem>
+                                 <asp:ListItem>06</asp:ListItem>
+                                 <asp:ListItem>07</asp:ListItem>
+                                 <asp:ListItem>08</asp:ListItem>
+                                 <asp:ListItem>09</asp:ListItem>
+                                 <asp:ListItem>10</asp:ListItem>
+                                 <asp:ListItem>11</asp:ListItem>
+                                 <asp:ListItem>12</asp:ListItem>
+                             </asp:DropDownList>
+						</div>
+						<div class="field half second">
+                            <asp:DropDownList ID="annoTxt" runat="server">
+                                 <asp:ListItem>Año de expiración</asp:ListItem>
+                                 <asp:ListItem>2019</asp:ListItem>
+                                 <asp:ListItem>2020</asp:ListItem>
+                                 <asp:ListItem>2021</asp:ListItem>
+                                 <asp:ListItem>2022</asp:ListItem>
+                                 <asp:ListItem>2023</asp:ListItem>
+                                 <asp:ListItem>2024</asp:ListItem>
+                                 <asp:ListItem>2024</asp:ListItem>
+                                 <asp:ListItem>2025</asp:ListItem>
+                            </asp:DropDownList>
+						</div>
+                        <div class="field">
+                          <br>
+                         </br> 
+                        </div>
+                        <div class="first half field">
+                                <asp:Button ID="pagar" class="special" runat="server" Text="Realizar pago" />
+                        </div>
+                        <div class="second half field">
+                                <asp:Button ID="cancelar" runat="server" Text="Cancelar" />
+
+                        </div>
+                    </asp:Panel>
+                </asp:Panel>
+
+				<!-- Footer -->
+                
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+        </div>
+    </form>
+</body>
+</html>
+

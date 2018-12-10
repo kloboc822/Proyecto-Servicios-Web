@@ -62,7 +62,7 @@
 				<!-- Main -->
                 <asp:Panel ID="main" runat="server">
                     <asp:Panel ID="Panel1" class="inner" runat="server">
-                        <h1>Agregar Puerta</h1>
+                        <h1>Pago EasyPay</h1>
 						<div class="field half first">
                              <asp:TextBox ID="CuentaTxt" runat="server" placeholder="Número de cuenta"></asp:TextBox> 
 						</div>

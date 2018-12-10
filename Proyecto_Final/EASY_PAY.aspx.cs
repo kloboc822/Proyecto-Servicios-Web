@@ -16,7 +16,11 @@ public partial class EASY_PAY : System.Web.UI.Page
     {
         string resultado = "";
         int temp = 0;
-        if (!int.TryParse(CodTxt.Text, out temp) || !int.TryParse(CuentaTxt.Text, out temp))
+        if (CodTxt.Text.Equals("") || CuentaTxt.Text.Equals(""))
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Por favor llene todos los campos que se le solicitan')", true);
+        }
+        else if (!int.TryParse(CodTxt.Text, out temp) || !int.TryParse(CuentaTxt.Text, out temp))
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Sólo se admiten números en los campos número de cuenta y código de seguridad')", true);
         }

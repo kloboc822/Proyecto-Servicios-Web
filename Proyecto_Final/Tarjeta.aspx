@@ -73,7 +73,7 @@
                         </div>
                         <div class="field">
                             <h2>Código de seguridad de la tarjeta</h2>
-                            <asp:TextBox ID="codTxt" runat="server" placeholder="CVV"></asp:TextBox>
+                            <asp:TextBox ID="codTxt" runat="server" placeholder="CVV" TextMode="Password"></asp:TextBox>
                         </div>
                         <div class="field">
                             <h2>Seleccione el método de pago</h2>
@@ -85,50 +85,50 @@
                              </asp:DropDownList>
 						</div>
                         <br>
-                         </br>
+                         <br></br>
                         <h2>Seleccione el mes y año de expiración de la tarjeta</h2>
-						<div class="field half first">
-                            
-                             <asp:DropDownList ID="mesTxt" runat="server">
-                                 <asp:ListItem>Mes de expiración</asp:ListItem>
-                                 <asp:ListItem>01</asp:ListItem>
-                                 <asp:ListItem>02</asp:ListItem>
-                                 <asp:ListItem>03</asp:ListItem>
-                                 <asp:ListItem>04</asp:ListItem>
-                                 <asp:ListItem>05</asp:ListItem>
-                                 <asp:ListItem>06</asp:ListItem>
-                                 <asp:ListItem>07</asp:ListItem>
-                                 <asp:ListItem>08</asp:ListItem>
-                                 <asp:ListItem>09</asp:ListItem>
-                                 <asp:ListItem>10</asp:ListItem>
-                                 <asp:ListItem>11</asp:ListItem>
-                                 <asp:ListItem>12</asp:ListItem>
-                             </asp:DropDownList>
-						</div>
-						<div class="field half second">
-                            <asp:DropDownList ID="annoTxt" runat="server">
-                                 <asp:ListItem>Año de expiración</asp:ListItem>
-                                 <asp:ListItem>2019</asp:ListItem>
-                                 <asp:ListItem>2020</asp:ListItem>
-                                 <asp:ListItem>2021</asp:ListItem>
-                                 <asp:ListItem>2022</asp:ListItem>
-                                 <asp:ListItem>2023</asp:ListItem>
-                                 <asp:ListItem>2024</asp:ListItem>
-                                 <asp:ListItem>2024</asp:ListItem>
-                                 <asp:ListItem>2025</asp:ListItem>
+                        <div class="field half first">
+                            <asp:DropDownList ID="mesTxt" runat="server">
+                                <asp:ListItem>Mes de expiración</asp:ListItem>
+                                <asp:ListItem>1</asp:ListItem>
+                                <asp:ListItem>2</asp:ListItem>
+                                <asp:ListItem>3</asp:ListItem>
+                                <asp:ListItem>4</asp:ListItem>
+                                <asp:ListItem>5</asp:ListItem>
+                                <asp:ListItem>6</asp:ListItem>
+                                <asp:ListItem>7</asp:ListItem>
+                                <asp:ListItem>8</asp:ListItem>
+                                <asp:ListItem>9</asp:ListItem>
+                                <asp:ListItem>10</asp:ListItem>
+                                <asp:ListItem>11</asp:ListItem>
+                                <asp:ListItem>12</asp:ListItem>
                             </asp:DropDownList>
-						</div>
+                        </div>
+                        <div class="field half second">
+                            <asp:DropDownList ID="annoTxt" runat="server">
+                                <asp:ListItem>Año de expiración</asp:ListItem>
+                                <asp:ListItem>2019</asp:ListItem>
+                                <asp:ListItem>2020</asp:ListItem>
+                                <asp:ListItem>2021</asp:ListItem>
+                                <asp:ListItem>2022</asp:ListItem>
+                                <asp:ListItem>2023</asp:ListItem>
+                                <asp:ListItem>2024</asp:ListItem>
+                                <asp:ListItem>2024</asp:ListItem>
+                                <asp:ListItem>2025</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
                         <div class="field">
-                          <br>
-                         </br> 
+                            <br>
+                            <br></br>
+                            </br>
                         </div>
                         <div class="first half field">
-                                <asp:Button ID="pagar" class="special" runat="server" Text="Realizar pago" />
+                            <asp:Button ID="pagar" runat="server" class="special" OnClick="pagar_Click" Text="Realizar pago" />
                         </div>
                         <div class="second half field">
-                                <asp:Button ID="cancelar" runat="server" Text="Cancelar" />
-
+                            <asp:Button ID="cancelar" runat="server" Text="Cancelar" />
                         </div>
+                         </br>
                     </asp:Panel>
                 </asp:Panel>
 

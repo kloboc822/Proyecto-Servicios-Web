@@ -129,7 +129,7 @@ namespace AplicacionWSPagos
                 conexion.Close();
                 conexion.Open();
                 sql = "SELECT * FROM TARJETAS WHERE CVV = '" + pago.cod_seguridad +
-                "' and num_tarjeta = '" + pago.num_tarjeta + "' and tarjethabiente = '" + pago.nombre + "' and mes = '" + pago.mes + "' and anyo = '" + pago.anyo + "' and tipo = " + pago.tipo + "";
+                "' and num_tarjeta = '" + pago.num_tarjeta + "' and tarjethabiente = '" + pago.nombre + "' and mes = '" + pago.mes + "' and anyo = '" + pago.anyo + "' and tipo = '" + pago.tipo + "'";
                 com = conexion.CreateCommand();
                 com.CommandText = sql;
                 rs = com.ExecuteReader();

@@ -13,6 +13,8 @@ namespace AplicacionWSPagos
     {
         [OperationContract]
         string GetCuenta(int cod_seguridad, int num_cuenta, string contrasena, int monto);
-        //string GetTarjeta(int cod_seguridad, int num_cuenta, string contrasena, int monto);
+
+        [OperationContract]
+        string GetTarjeta(int cod, int num_tarjeta, string nombre, int monto, int anyo, int mes, string tipo);
     }
 }

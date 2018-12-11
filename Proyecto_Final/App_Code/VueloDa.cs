@@ -163,6 +163,7 @@ public class VueloDa
         conVue.Open();
         com.ExecuteNonQuery();
         conVue.Close();
+        sumarConsecutivoCompra();
     }
 
     public static void registrarReserva()
@@ -178,6 +179,7 @@ public class VueloDa
         conVue.Open();
         com.ExecuteNonQuery();
         conVue.Close();
+        sumarConsecutivoReserva();
     }
 
 
@@ -212,6 +214,82 @@ public class VueloDa
         //actualizar el nuevo consecutivo disponible
         conVue.Open();
         SqlCommand com = new SqlCommand("UPDATE CONSECUTIVO SET next_conse=@a1, codigo=@a2 where descripcion = 'Vuelos'", conVue);
+        com.Parameters.AddWithValue("a1", sum2);
+        com.Parameters.AddWithValue("a2", pre + sum2);
+        com.ExecuteNonQuery();
+        conVue.Close();
+        DatosBITACORA.agregarDato("Consecutivo actualizado " + pre + sum);
+    }
+
+    public static void sumarConsecutivoCompra()
+    {
+
+        int sum = 0;
+        int sum2 = 0;
+        string pre = "";
+
+        conVue.Open();
+        SqlCommand comando = new SqlCommand(String.Format("Select prefijo,next_conse from CONSECUTIVO where descripcion = '{0}'", "Compra de Boletos"), conVue);
+        SqlDataReader red = comando.ExecuteReader();
+        while (red.Read())
+        {
+            pre = red.GetString(0);
+            sum = red.GetInt32(1);
+        }
+        conVue.Close();
+
+        //Agregar a tabla de codigos usados
+        conVue.Open();
+        SqlCommand com2 = new SqlCommand("INSERT INTO CODIGOS(codigo,descripcion) VALUES(@codigo, @descripcion)", conVue);
+        com2.Parameters.AddWithValue("@codigo", pre + sum);
+        com2.Parameters.AddWithValue("@descripcion", "Compra de Boletos");
+        com2.ExecuteNonQuery();
+        conVue.Close();
+        DatosBITACORA.agregarDato("Consecutivo agregado " + pre + sum);
+        sum2 = sum + 1;
+
+
+        //actualizar el nuevo consecutivo disponible
+        conVue.Open();
+        SqlCommand com = new SqlCommand("UPDATE CONSECUTIVO SET next_conse=@a1, codigo=@a2 where descripcion = 'Compra de Boletos'", conVue);
+        com.Parameters.AddWithValue("a1", sum2);
+        com.Parameters.AddWithValue("a2", pre + sum2);
+        com.ExecuteNonQuery();
+        conVue.Close();
+        DatosBITACORA.agregarDato("Consecutivo actualizado " + pre + sum);
+    }
+
+    public static void sumarConsecutivoReserva()
+    {
+
+        int sum = 0;
+        int sum2 = 0;
+        string pre = "";
+
+        conVue.Open();
+        SqlCommand comando = new SqlCommand(String.Format("Select prefijo,next_conse from CONSECUTIVO where descripcion = '{0}'", "Reservacion de Boletos"), conVue);
+        SqlDataReader red = comando.ExecuteReader();
+        while (red.Read())
+        {
+            pre = red.GetString(0);
+            sum = red.GetInt32(1);
+        }
+        conVue.Close();
+
+        //Agregar a tabla de codigos usados
+        conVue.Open();
+        SqlCommand com2 = new SqlCommand("INSERT INTO CODIGOS(codigo,descripcion) VALUES(@codigo, @descripcion)", conVue);
+        com2.Parameters.AddWithValue("@codigo", pre + sum);
+        com2.Parameters.AddWithValue("@descripcion", "Reservacion de Boletos");
+        com2.ExecuteNonQuery();
+        conVue.Close();
+        DatosBITACORA.agregarDato("Consecutivo agregado " + pre + sum);
+        sum2 = sum + 1;
+
+
+        //actualizar el nuevo consecutivo disponible
+        conVue.Open();
+        SqlCommand com = new SqlCommand("UPDATE CONSECUTIVO SET next_conse=@a1, codigo=@a2 where descripcion = 'Reservacion de Boletos'", conVue);
         com.Parameters.AddWithValue("a1", sum2);
         com.Parameters.AddWithValue("a2", pre + sum2);
         com.ExecuteNonQuery();

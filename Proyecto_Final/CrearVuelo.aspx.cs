@@ -48,6 +48,13 @@ public partial class CrearVuelo : System.Web.UI.Page
         
     }
 
+    private void clearFields() {
+
+        txtLugar.Text="";
+        txtFecha.Text = "";
+        txtPrecio.Text = "";
+        dplCod.DataBind();
+    }
  
 
     protected void btnCancel_Click(object sender, EventArgs e)
@@ -72,6 +79,7 @@ public partial class CrearVuelo : System.Web.UI.Page
 
                 VueloDa.insertarVuelo(dplCod.Text, dplAero.Text, fecha, horas, txtLugar.Text, Int32.Parse(txtPrecio.Text), dpdPuerta.Text, Session["Tipo"].ToString(), dpdEstado.Text);
                 VueloDa.sumarConsecutivoVuelo();
+                clearFields();
 
             }
         }

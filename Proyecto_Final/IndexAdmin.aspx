@@ -62,10 +62,10 @@
 									<span class="image">
 										<img src="images/pic01.jpg" alt="" />
 									</span>
-									<a href="CreateExam.aspx">
+									<a>
 										<h2>Menú de Seguridad</h2>
 										<div class="content">
-											<p>Ir!</p>
+											<asp:Button ID="btnSeguridad" runat="server" class = "special" Text="Ir" OnClick="btnSeguridad_Click" />
 										</div>
 									</a>
 								</article>
@@ -73,13 +73,25 @@
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
 									</span>
-									<a href="Index.aspx"">
+									<a>
 										<h2>Menú de Administración</h2>
 										<div class="content">
-											<p>Ir!</p>
+											<asp:Button ID="btnAdmin" runat="server" class = "special" Text="Ir" OnClick="btnAdmin_Click" />
 										</div>
 									</a>
 								</article>
+                                	<article class="style3">
+									<span class="image">
+										<img src="images/pic03.jpg" alt="" />
+									</span>
+									<a>
+										<h2>Consultas</h2>
+										<div class="content">
+											<asp:Button ID="btnConsultas" runat="server" class = "special" Text="Ir"/>
+										</div>
+									</a>
+								</article>
+
 								<%--<article class="style3">
 									<span class="image">
 										<img src="images/pic03.jpg" alt="" />

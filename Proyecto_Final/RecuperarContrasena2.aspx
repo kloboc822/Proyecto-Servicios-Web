@@ -41,38 +41,14 @@
 								<h2>V-Vuelos - Pregunta de Seguridad</h2>
 								<form method="post" action="#">
 									<div class="field half first">
-                                        <asp:TextBox ID="firstnameTxt" runat="server" placeholder="First Name"></asp:TextBox>
+                                        <asp:TextBox ID="preguntaTxt" runat="server" placeholder="First Name"></asp:TextBox>
 									</div>
 									<div class="field half">
-                                        <asp:TextBox ID="surname1Txt" runat="server" placeholder="First Surname" TextMode="SingleLine"></asp:TextBox>
+                                        <asp:TextBox ID="respuestaTxt" runat="server" placeholder="Respuesta" TextMode="SingleLine"></asp:TextBox>
 									</div>
-                                    <div class="field half first">
-                                        <asp:TextBox ID="surname2Txt" runat="server" placeholder="Second Surname"></asp:TextBox>
-									</div>
-									<div class="field half">
-                                        <asp:TextBox ID="idTxt" runat="server" placeholder="ID" TextMode="SingleLine"></asp:TextBox>
-									</div>
-                                    <div class="field half first">
-                                        <asp:TextBox ID="emailTxt" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
-									</div>
-									<div class="field half">
-                                        <asp:DropDownList ID="tipouserTxt" placeholder="Type of User" runat="server">
-                                            <asp:ListItem Value="0">Administrador</asp:ListItem>
-                                            <asp:ListItem Value="1">Seguridad</asp:ListItem>
-                                            <asp:ListItem Value="2">Consecutivo</asp:ListItem>
-                                            <asp:ListItem Value="3">Mantenimiento</asp:ListItem>
-                                            <asp:ListItem Value="4">Consulta</asp:ListItem>
-                                            <asp:ListItem Value="5">Usuario Regular</asp:ListItem>
-                                        </asp:DropDownList>
-									</div>
-                                    <div class="field half first">
-                                        <asp:TextBox ID="passwordTxt" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-									</div>
-                                    <div class="field half">
-                                        <asp:TextBox ID="nacionalidadTxt" runat="server" placeholder="Nacionalidad" TextMode="SingleLine"></asp:TextBox>
-									</div>
+                                    
 									<ul class="actions">
-                                        <asp:Button ID="createBtn" runat="server" type= "submit" class="special" Text="Create User" OnClick="createBtn_Click" />
+                                        <asp:Button ID="aceptarBtn" runat="server" type= "submit" class="special" Text="Aceptar" />
                                         <asp:Button ID="cancelBtn" runat="server" Text="Cancel" OnClick="cancelBtn_Click" />
 									</ul>
 								</form>

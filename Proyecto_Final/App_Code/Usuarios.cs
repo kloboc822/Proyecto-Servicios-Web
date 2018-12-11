@@ -80,12 +80,50 @@ public class Usuarios
             rs = com.ExecuteReader();
             if (rs.Read())
             {
+                Global.id = Int32.Parse(rs["id_usuario"].ToString());
                 resultado = "exitoso";
-
             }
             else
             {
                 resultado = "Los datos ingresados no son correctos, usuario no existe.";
+            }
+            conexion.Close();
+            return resultado;
+
+
+        }
+        catch (Exception e)
+        {
+            string excepcion = e.ToString();
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+            conexion.Close();
+            return resultado;
+        }
+
+    }
+
+    public static string obtienePregunta()
+    {
+        string sql;
+        SqlDataReader rs;
+        string resultado = "";
+
+        try
+        {
+            conexion.Close();
+            conexion.Open();
+
+            sql = "SELECT * FROM USUARIO WHERE id_usuario = '" + Global.id + "'";
+            com = conexion.CreateCommand();
+            com.CommandText = sql;
+            rs = com.ExecuteReader();
+            if (rs.Read())
+            {
+                resultado = rs[8].ToString();
+            }
+            else
+            {
+                resultado = "ERROR AL CARGAR PREGUNTA DE SEGURIDAD";
             }
             conexion.Close();
             return resultado;

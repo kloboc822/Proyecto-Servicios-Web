@@ -20,7 +20,7 @@ public class Global
     public static string email = "";
     public static int id = 0;
     public static int userType = 0;
-    public static int cantpregExam = 1;
+    public static int cantidad = 1;
     public static int cantRespPreg = 1;
     public static int cont = 1;
     public static int codExam = 0;

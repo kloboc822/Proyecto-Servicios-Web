@@ -18,18 +18,15 @@ public partial class ReservaBoletos2 : System.Web.UI.Page
 
     protected void comprarBtn_Click(object sender, EventArgs e)
     {
-        if (metodoPagoTxt.Equals("Tarjeta"))
+        try
         {
-            Response.Redirect("http://localhost:53551/Tarjeta.aspx");
+            VueloDa.registrarReserva();
         }
-        else if (metodoPagoTxt.Equals("EasyPay"))
+        catch (Exception)
         {
-            Response.Redirect("http://localhost:53551/EASY_PAY.aspx");
+            throw;
         }
-        else
-        {
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Seleccione un metodo de Pago')", true);
-        }
+        
     }
 
     protected void volverBtn_Click(object sender, EventArgs e)

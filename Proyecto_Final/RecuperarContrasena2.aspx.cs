@@ -11,4 +11,9 @@ public partial class RecuperarContrasena2 : System.Web.UI.Page
     {
 
     }
+
+    protected void cancelBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("http://localhost:53551/LogIn.aspx");
+    }
 }

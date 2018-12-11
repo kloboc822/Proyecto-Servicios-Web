@@ -12,19 +12,31 @@ public partial class Index : System.Web.UI.Page
 
     }
 
-    protected void PaisesBtn_Click(object sender, EventArgs e)
+ 
+
+
+    protected void btnConsecutivos_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://localhost:53551/IndexPaises.aspx");
+        Response.Redirect("showCon.aspx");
     }
 
-    protected void PuertasBtn_Click(object sender, EventArgs e)
+    protected void btnAerolineas_Click(object sender, EventArgs e)
     {
-        Response.Redirect("http://localhost:53551/IndexPuertas.aspx");
+        Response.Redirect("verAerolineas.aspx");
     }
 
-    protected void applyMathBtn_Click(object sender, EventArgs e)
+    protected void btnVuelos_Click(object sender, EventArgs e)
     {
-        Global.examName = "Maths";
-        Response.Redirect("TakeExam.aspx");
+        Response.Redirect("Vuelos.aspx");
+    }
+
+    protected void BtnPaises_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("IndexPaises.aspx");
+    }
+
+    protected void BtnPuertas_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("IndexPuertas.aspx");
     }
 }

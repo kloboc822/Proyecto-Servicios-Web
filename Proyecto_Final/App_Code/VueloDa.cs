@@ -165,6 +165,21 @@ public class VueloDa
         conVue.Close();
     }
 
+    public static void registrarReserva()
+    {
+
+        conVue.Close();
+        SqlCommand com = new SqlCommand("INSERT INTO Reserva(cod_reserva,id_usuario,cod_pais,cod_vuelo,cantidad) VALUES(@cod_compra,@id_usuario,@cod_pais,@cod_vuelo,@cantidad)", conVue);
+        com.Parameters.AddWithValue("@cod_compra", obtenerCod_reserva());
+        com.Parameters.AddWithValue("@id_usuario", Global.id);
+        com.Parameters.AddWithValue("@cod_pais", DatosPAISES.obtenerCod_Pais(Global.lugar));
+        com.Parameters.AddWithValue("@cod_vuelo", Global.cod_vuelo);
+        com.Parameters.AddWithValue("@total", Global.cantidad);
+        conVue.Open();
+        com.ExecuteNonQuery();
+        conVue.Close();
+    }
+
 
     public static void sumarConsecutivoVuelo()
     {

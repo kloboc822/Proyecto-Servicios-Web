@@ -17,7 +17,7 @@ public partial class RecuperarContrasena : System.Web.UI.Page
         try
         {
             string resultado = Usuarios.verificaUsuario(Int32.Parse(userTxt.Text));
-            if (resultado.Equals("Exitoso"))
+            if (resultado.Equals("exitoso"))
             {
                 Response.Redirect("http://localhost:53551/RecuperarContrasena2.aspx");
             }

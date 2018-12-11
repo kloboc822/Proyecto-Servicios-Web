@@ -48,6 +48,12 @@ public partial class CrearVuelo : System.Web.UI.Page
         
     }
 
+    private void clearFields() {
+
+        txtFecha.Text = "";
+        txtPrecio.Text = "";
+        dplCod.DataBind();
+    }
  
 
     protected void btnCancel_Click(object sender, EventArgs e)
@@ -63,15 +69,16 @@ public partial class CrearVuelo : System.Web.UI.Page
 
         try
         {
-            if (txtFecha.Text.Equals("") || txtLugar.Text.Equals("") || txtPrecio.Text.Equals(""))
+            if (txtFecha.Text.Equals("") || txtPrecio.Text.Equals(""))
             { ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('No blank spaces are allowed.')", true); }
 
           
             else
             {
 
-                VueloDa.insertarVuelo(dplCod.Text, dplAero.Text, fecha, horas, txtLugar.Text, Int32.Parse(txtPrecio.Text), dpdPuerta.Text, Session["Tipo"].ToString(), dpdEstado.Text);
+                VueloDa.insertarVuelo(dplCod.Text, dplAero.Text, fecha, horas, dplluga.Text, Int32.Parse(txtPrecio.Text), dpdPuerta.Text, Session["Tipo"].ToString(), dpdEstado.Text);
                 VueloDa.sumarConsecutivoVuelo();
+                clearFields();
 
             }
         }

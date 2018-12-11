@@ -11,6 +11,7 @@ using System.Web.UI;
 public class VueloDa
 {
     static SqlConnection conVue = new SqlConnection("Data Source = localhost\\SQLEXPRESS; Initial Catalog = Vuelos; Integrated Security = True");
+    static SqlCommand com;
     public VueloDa()
     {
 
@@ -36,7 +37,133 @@ public class VueloDa
         }
 
 
-    
+    public static string consultarVuelo(string lugar, string fecha)
+    {
+        conVue.Close();
+
+        string sql;
+        SqlDataReader rs;
+        string resultado;
+
+        try
+        {
+            conVue.Close();
+            conVue.Open();
+
+            sql = "SELECT cod_vuelo,aerolinea,hora, precio FROM Vuelo WHERE fecha = '" + fecha +
+            "' and lugar = '" + lugar + "'";
+            com = conVue.CreateCommand();
+            com.CommandText = sql;
+            rs = com.ExecuteReader();
+            if (rs.Read())
+            {
+                return "Cargando Vuelos con los parametros deseados, presione OK.";
+            }
+            else
+            {
+                resultado = "No existen vuelos en las fecha seleccionada al destino seleccionado, intente una nueva busqueda";
+            }
+            conVue.Close();
+            return resultado;
+        }
+        catch (Exception e)
+        {
+            string excepcion = e.ToString();
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+            conVue.Close();
+            return resultado;
+        }
+    }
+
+    public static string obtenerCod_compra()
+    {
+        conVue.Close();
+
+        string sql;
+        SqlDataReader rs;
+        string resultado;
+
+        try
+        {
+            conVue.Close();
+            conVue.Open();
+
+            sql = "select codigo from consecutivo where descripcion = 'Compra de Boletos'";
+            com = conVue.CreateCommand();
+            com.CommandText = sql;
+            rs = com.ExecuteReader();
+            if (rs.Read())
+            {
+                resultado = rs[0].ToString();
+            }
+            else
+            {
+                resultado = "ERROR OBTENIENDO CODIGO DE COMPRA";
+            }
+            conVue.Close();
+            return resultado;
+        }
+        catch (Exception e)
+        {
+            string excepcion = e.ToString();
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+            conVue.Close();
+            return resultado;
+        }
+    }
+
+    public static string obtenerCod_reserva()
+    {
+        conVue.Close();
+
+        string sql;
+        SqlDataReader rs;
+        string resultado;
+
+        try
+        {
+            conVue.Close();
+            conVue.Open();
+
+            sql = "select codigo from consecutivo where descripcion = 'Reservacion de Boletos'";
+            com = conVue.CreateCommand();
+            com.CommandText = sql;
+            rs = com.ExecuteReader();
+            if (rs.Read())
+            {
+                resultado = rs[0].ToString();
+            }
+            else
+            {
+                resultado = "ERROR OBTENIENDO CODIGO DE Reserva";
+            }
+            conVue.Close();
+            return resultado;
+        }
+        catch (Exception e)
+        {
+            string excepcion = e.ToString();
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+            conVue.Close();
+            return resultado;
+        }
+    }
+
+    public static void registrarCompra()
+    {
+
+        conVue.Close();
+        SqlCommand com = new SqlCommand("INSERT INTO Compra(cod_compra,id_usuario,cod_pais,cod_vuelo,total,tipo) VALUES(@cod_compra,@id_usuario,@cod_pais,@cod_vuelo,@total,@tipo)", conVue);
+        com.Parameters.AddWithValue("@cod_compra", obtenerCod_compra());
+        com.Parameters.AddWithValue("@id_usuario", Global.id);
+        com.Parameters.AddWithValue("@cod_pais", DatosPAISES.obtenerCod_Pais(Global.lugar));
+        com.Parameters.AddWithValue("@cod_vuelo", Global.cod_vuelo);
+        com.Parameters.AddWithValue("@total", Global.precio);
+        com.Parameters.AddWithValue("@tipo", Global.tipo);
+        conVue.Open();
+        com.ExecuteNonQuery();
+        conVue.Close();
+    }
 
 
     public static void sumarConsecutivoVuelo()

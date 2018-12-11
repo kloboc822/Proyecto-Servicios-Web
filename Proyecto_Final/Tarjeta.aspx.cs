@@ -46,6 +46,18 @@ public partial class Tarjeta : System.Web.UI.Page
             resultado = servicio.GetTarjeta(Int32.Parse(codTxt.Text), Int32.Parse(tarjetaTxt.Text),nombreTxt.Text,500, Int32.Parse(annoTxt.SelectedValue), Int32.Parse(mesTxt.SelectedValue), tipotarjeta);
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
 
+            try
+            {
+                VueloDa.registrarCompra();
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Compra Registrada con Exito')", true);
+            }
+            catch (Exception s)
+            {
+                string error = s.ToString();
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('ERROR REGISTRANDO COMPRA, CONTACTE A SU DESARROLLADOR')", true);
+                throw;
+            }
+
         }
     }
 }

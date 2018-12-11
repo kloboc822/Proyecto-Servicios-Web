@@ -31,7 +31,11 @@ public class Global
     public static string imagen_pais = "";
     public static string cod_puerta = "";
     public static string detalle_puerta = "";
-
+    public static string lugar = "";
+    public static string fechaSalida = "";
+    public static string cod_vuelo = "";
+    public static int precio = 0;
+    public static string tipo = "Salida";
 
     public Global()
     {

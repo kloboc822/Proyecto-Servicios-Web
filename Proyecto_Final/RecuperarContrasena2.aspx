@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="NewUser.aspx.cs" Inherits="NewUser" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RecuperarContrasena2.aspx.cs" Inherits="RecuperarContrasena2" %>
 
 <!DOCTYPE html>
 
@@ -38,7 +38,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>V-Vuelos - Creando un nuevo Usuario</h2>
+								<h2>V-Vuelos - Pregunta de Seguridad</h2>
 								<form method="post" action="#">
 									<div class="field half first">
                                         <asp:TextBox ID="firstnameTxt" runat="server" placeholder="First Name"></asp:TextBox>

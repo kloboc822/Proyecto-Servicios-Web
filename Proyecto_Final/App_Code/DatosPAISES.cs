@@ -190,5 +190,39 @@ public class DatosPAISES
         DatosBITACORA.agregarDato("Consecutivo actualizado " + pre + sum);
     }
 
+    public static string obtenerCod_Pais(string nombre)
+    {
+        string sql;
+        SqlDataReader rs;
+        string resultado = "";
+
+        try
+        {
+            conexion.Close();
+            conexion.Open();
+            sql = "SELECT cod_pais FROM PAIS WHERE nombre = '" + nombre + "'";
+            com = conexion.CreateCommand();
+            com.CommandText = sql;
+            rs = com.ExecuteReader();
+            if (rs.Read())
+            {
+                resultado = rs[0].ToString();
+            }
+            else
+            {
+                resultado = "ERROR OBTENIENDO COD_PAIS, CONTACTE A SU DESARROLLADOR";
+            }
+            conexion.Close();
+            return resultado;
+
+
+        }
+        catch (Exception e)
+        {
+            string excepcion = e.ToString();
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+            return resultado;
+        }
+    }
 
 }

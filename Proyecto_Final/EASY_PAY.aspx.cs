@@ -29,6 +29,18 @@ public partial class EASY_PAY : System.Web.UI.Page
             WebServicePago.Service1Client servicio = new WebServicePago.Service1Client();
             resultado = servicio.GetCuenta(Int32.Parse(CodTxt.Text), Int32.Parse(CuentaTxt.Text), ContrasenaTxt.Text, 500);
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
+
+            try
+            {
+                VueloDa.registrarCompra();
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Compra Registrada con Exito')", true);
+            }
+            catch (Exception s)
+            {
+                string error = s.ToString();
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('ERROR EN EL REGISTRO DE LA COMPRA, CONTACTE A SU DESARROLLADOR')", true);
+                throw;
+            }
         }
     }
 }

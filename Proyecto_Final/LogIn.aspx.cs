@@ -32,19 +32,22 @@ public partial class LogIn : System.Web.UI.Page
             switch (resultado)
             {
                 case "1":
-                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");
+                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");//Administrador
                     break;
                 case "2":
-                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");
+                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");//Seguridad
                     break;
                 case "3":
-                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");
+                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");//Consecutivo
                     break;
                 case "4":
-                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");
+                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");//Mantenimiento
                     break;
                 case "5":
-                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");
+                    Response.Redirect("http://localhost:53551/IndexAdmin.aspx");//Consulta
+                    break;
+                case "6":
+                    Response.Redirect("http://localhost:53551/IndexUser.aspx");//Usuario Regular
                     break;
                 default:
                     ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);

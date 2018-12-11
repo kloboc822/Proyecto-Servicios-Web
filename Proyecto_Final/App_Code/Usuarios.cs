@@ -82,15 +82,18 @@ public class Usuarios
             conexion.Open();
             com2.ExecuteNonQuery();
             conexion.Close();
-            resultado = "Usuario añadido con exito";
+            resultado = "Usuario añadido con éxito";
+            DatosBITACORA.agregarDato(resultado + " al agregar usuario " + id.ToString());
             return resultado;
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            conexion.Close();
-            resultado = "Error de conexion. [addUserError]";
+            string excepcion = e.ToString();
+            resultado = "Error de conexión. [addUserError]";
+            DatosBITACORA.agregarDato(resultado + " al agregar usuario " + id.ToString());
             return resultado;
         }
+        
     }
 
 

@@ -42,12 +42,10 @@ public partial class CrearVuelo : System.Web.UI.Page
         }
 
 
-        txtFecha.Enabled = false;
+        
 
    
         
-      
-
     }
 
  
@@ -61,17 +59,14 @@ public partial class CrearVuelo : System.Web.UI.Page
     {
 
         string horas = dplHoras.Text + ":" +dplMin.Text;
-        string fecha = Calendar1.SelectedDate.ToString("m");
+        string fecha = txtFecha.Text;
 
         try
         {
             if (txtFecha.Text.Equals("") || txtLugar.Text.Equals("") || txtPrecio.Text.Equals(""))
             { ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('No blank spaces are allowed.')", true); }
 
-            else if (Calendar1.SelectedDate < DateTime.Today)
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Fecha Invalida')", true);
-            }
+          
             else
             {
 
@@ -85,10 +80,7 @@ public partial class CrearVuelo : System.Web.UI.Page
 
     }
 
-    protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-    {
-        txtFecha.Text = Calendar1.SelectedDate.ToString("m");
-    }
+  
 
    
 }

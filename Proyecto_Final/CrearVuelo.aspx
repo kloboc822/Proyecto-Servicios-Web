@@ -5,13 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            left: 13px;
-            top: -2px;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
      <html>
@@ -88,9 +82,8 @@
                    </h2>
        </div>
 <div class ="field">
-            <h2>Fecha:<asp:TextBox ID="txtFecha" runat="server"></asp:TextBox>
+            <h2>Fecha:<asp:TextBox ID="txtFecha" runat="server" TextMode="Date"></asp:TextBox>
             </h2>
-            <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" Height="184px" Width="506px"></asp:Calendar>
         </div>
 <div class ="field half first"> 
 

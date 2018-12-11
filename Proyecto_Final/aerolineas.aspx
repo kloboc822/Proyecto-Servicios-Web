@@ -103,7 +103,7 @@
 
 
 
-<%--    <footer align="center">
+    <footer align="center">
 
  <div id="google_translate_element"></div><script type="text/javascript">
 function googleTranslateElementInit() {
@@ -114,7 +114,7 @@ function googleTranslateElementInit() {
 		.goog-te-banner-frame.skiptranslate{display:none!important;}
 		body{top:0px!important;}
 		</style>
-</footer>--%>
+</footer>
 
 </body>
 </html>

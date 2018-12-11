@@ -118,6 +118,18 @@
                                         
 									</a>
 								</article>
+                                       <article class="style5">
+									<span class="image">
+										<img src="images/pic11.jpg" alt="" />
+									</span>
+									<a>
+										<h2>Crear usuario</h2>
+										<div class="content">
+											 <asp:Button ID="BtnUsuario" runat="server" class = "special" Text="Ir" OnClick="BtnUsuario_Click" />
+										</div>
+                                        
+									</a>
+								</article>
 							</section>
 
 						</div>

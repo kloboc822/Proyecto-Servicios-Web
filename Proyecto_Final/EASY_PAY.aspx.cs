@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class EASY_PAY : System.Web.UI.Page
 {
+    bool Valid = false;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -16,7 +20,11 @@ public partial class EASY_PAY : System.Web.UI.Page
     {
         string resultado = "";
         int temp = 0;
-        if (CodTxt.Text.Equals("") || CuentaTxt.Text.Equals(""))
+        if (Valid == false)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Por favor valide el captcha')", true);
+        }
+        else if (CodTxt.Text.Equals("") || CuentaTxt.Text.Equals(""))
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Por favor llene todos los campos que se le solicitan')", true);
         }
@@ -42,5 +50,55 @@ public partial class EASY_PAY : System.Web.UI.Page
                 throw;
             }
         }
+    }
+    public bool CaptchaValidate()
+    {
+        string ResponseByGoogle = Request["g-recaptcha-response"];
+
+        string CaptchaSecretKey = "6LfnN4AUAAAAAJm-GDYwST1UBuMSJKLAypBRqLB5";
+
+
+        HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://www.google.com/recaptcha/api/siteverify?secret=" + CaptchaSecretKey + "&response=" + ResponseByGoogle);
+
+        try
+        {
+            using (WebResponse wResponse = req.GetResponse())
+            {
+                using (StreamReader readStream = new
+                    StreamReader(wResponse.GetResponseStream()))
+                {
+                    string jsonResponse = readStream.ReadToEnd();
+
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    CaptchaValidate data = js.Deserialize<CaptchaValidate>(jsonResponse);
+
+                    Valid = Convert.ToBoolean(data.success);
+
+
+                }
+            }
+
+            return Valid;
+        }
+        catch (WebException ex)
+        {
+            throw ex;
+        }
+    }
+    protected void btntest_Click(object sender, EventArgs e)
+    {
+        if (CaptchaValidate() == true)
+        {
+
+            lbltest.Text = "Validación correcta";
+        }
+
+        else if (CaptchaValidate() == false)
+        {
+
+            lbltest.Text = "Validación incorrecta";
+
+        }
+
     }
 }

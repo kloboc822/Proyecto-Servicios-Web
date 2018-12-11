@@ -27,6 +27,14 @@
 								</a>
 						</div>
 					</header>
+                    <nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="IndexUser.aspx">Página principal</a></li>
+                            <li><a href="Login.aspx">Log Out</a></li>
+                            <li><a href="About.aspx">About Us</a></li>
+						</ul>
+					</nav>
                 </div>
 				<!-- Footer -->
 					<footer id="footer">

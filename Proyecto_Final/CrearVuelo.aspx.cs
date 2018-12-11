@@ -77,13 +77,16 @@ public partial class CrearVuelo : System.Web.UI.Page
             {
 
                 VueloDa.insertarVuelo(dplCod.Text, dplAero.Text, fecha, horas, dplluga.Text, Int32.Parse(txtPrecio.Text), dpdPuerta.Text, Session["Tipo"].ToString(), dpdEstado.Text);
+                DatosBITACORA.agregarDato("Vuelo agregado " + dplCod.Text);
                 VueloDa.sumarConsecutivoVuelo();
                 clearFields();
 
             }
         }
         catch (Exception)
-        { ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Invalid Data')", true); }
+        { ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Invalid Data')", true);
+            DatosBITACORA.agregarDato("Problema al agregar vuelo Invalid Data " + dplCod.Text);
+        }
 
     }
 

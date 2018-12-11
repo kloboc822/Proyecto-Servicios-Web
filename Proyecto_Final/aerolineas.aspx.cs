@@ -44,7 +44,7 @@ public partial class aerolineas : System.Web.UI.Page
         com2.Parameters.AddWithValue("@descripcion", "Aerolinea");
         com2.ExecuteNonQuery();
         con.Close();
-
+        DatosBITACORA.agregarDato("Consecutivo agregado " + pre + sum);
         sum2 = sum + 1;
 
 
@@ -55,6 +55,7 @@ public partial class aerolineas : System.Web.UI.Page
         com.Parameters.AddWithValue("a2", pre+sum2);
         com.ExecuteNonQuery();
         con.Close();
+        DatosBITACORA.agregarDato("Consecutivo actualizado " + pre + sum);
     }
 
     protected void btnUpload_Click(object sender, EventArgs e)
@@ -121,7 +122,7 @@ public partial class aerolineas : System.Web.UI.Page
                     sumarConsecutivo();
                     dplCodi.DataBind();
                     ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Image uploaded')", true);
-                  
+                    DatosBITACORA.agregarDato("Aerolínea creada " + txtName.Text);
 
 
                 }
@@ -130,6 +131,7 @@ public partial class aerolineas : System.Web.UI.Page
                 {
 
                     ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Invalid Image')", true);
+                    DatosBITACORA.agregarDato("Problema al crear la aerolínea " + txtName.Text);
 
                 }
             }

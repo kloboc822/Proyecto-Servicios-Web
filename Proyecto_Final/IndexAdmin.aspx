@@ -73,7 +73,7 @@
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
 									</span>
-									<a href="Index.aspx">
+									<a href="Index.aspx"">
 										<h2>Menú de Administración</h2>
 										<div class="content">
 											<p>Ir!</p>

@@ -63,7 +63,7 @@ public class VueloDa
         com2.Parameters.AddWithValue("@descripcion", "Vuelos");
         com2.ExecuteNonQuery();
         conVue.Close();
-
+        DatosBITACORA.agregarDato("Consecutivo agregado " + pre + sum);
         sum2 = sum + 1;
 
 
@@ -74,6 +74,7 @@ public class VueloDa
         com.Parameters.AddWithValue("a2", pre + sum2);
         com.ExecuteNonQuery();
         conVue.Close();
+        DatosBITACORA.agregarDato("Consecutivo actualizado " + pre + sum);
     }
 
 

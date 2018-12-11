@@ -63,13 +63,17 @@ public class DatosPUERTAS
             conexion.Open();
             com.ExecuteNonQuery();
             conexion.Close();
-            return "Puerta agregada con éxito.";
+            string resultado = "Puerta agregada con éxito.";
+            DatosBITACORA.agregarDato(resultado + " al agregar puerta " + codigo);
+            return resultado;
 
         }
         catch (Exception e)
         {
             string excepcion = e.ToString();
-            return "Los datos seleccionados no pueden ingresarse, por favor verifique e intente de nuevo";
+            excepcion = "Los datos seleccionados no pueden ingresarse, por favor verifique e intente de nuevo";
+            DatosBITACORA.agregarDato(excepcion + " al agregar puerta " + codigo);
+            return excepcion;
         }
     }
 
@@ -134,12 +138,16 @@ public class DatosPUERTAS
             }
 
             conexion.Close();
-            return "Puerta actualizada exitosamente";
+            resultado = "Puerta actualizada exitosamente";
+            DatosBITACORA.agregarDato(resultado + " al agregar puerta " + codigo);
+            return resultado;
+
         }
         catch (Exception e)
         {
             string excepcion = e.ToString();
             resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+            DatosBITACORA.agregarDato(resultado + " al agregar puerta " + codigo);
             return resultado;
         }
     }
@@ -169,6 +177,7 @@ public class DatosPUERTAS
         com2.Parameters.AddWithValue("@descripcion", "Puertas del Aeropuerto");
         com2.ExecuteNonQuery();
         conexion.Close();
+        DatosBITACORA.agregarDato("Consecutivo agregado " + pre + sum);
 
         sum2 = sum + 1;
 
@@ -180,6 +189,7 @@ public class DatosPUERTAS
         com.Parameters.AddWithValue("a2", pre + sum2);
         com.ExecuteNonQuery();
         conexion.Close();
+        DatosBITACORA.agregarDato("Consecutivo actualizado " + pre + sum);
     }
 
 

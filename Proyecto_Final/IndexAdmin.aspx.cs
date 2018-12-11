@@ -11,4 +11,14 @@ public partial class IndexAdmin : System.Web.UI.Page
     {
 
     }
+
+    protected void btnSeguridad_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("NewUser.aspx");
+    }
+
+    protected void btnAdmin_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Index.aspx");
+    }
 }

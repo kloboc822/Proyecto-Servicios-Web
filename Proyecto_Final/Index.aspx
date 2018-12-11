@@ -65,7 +65,7 @@
 									<a> 
 										<h2>Administrar Países</h2>
 										<div class="content">
-											 <asp:Button ID="PaisesBtn" runat="server" class = "special" Text="Ir" OnClick="PaisesBtn_Click"/>
+											 <asp:Button ID="BtnPaises" runat="server" class = "special" Text="Ir" OnClick="BtnPaises_Click"  />
 										</div>
                                        
 									</a>
@@ -77,7 +77,7 @@
 									<a>
 										<h2>Administrar Puertas</h2>
 										<div class="content">
-											<asp:Button ID="PuertasBtn" runat="server" class = "special" Text="Ir" OnClick="PuertasBtn_Click"/>
+											<asp:Button ID="BtnPuertas" runat="server" class = "special" Text="Ir" OnClick="BtnPuertas_Click"/>
 										</div>
                                          
 									</a>
@@ -87,9 +87,33 @@
 										<img src="images/pic03.jpg" alt="" />
 									</span>
 									<a>
-										<h2>Math</h2>
+										<h2>Consecutivos</h2>
 										<div class="content">
-											 <asp:Button ID="applyMathBtn" runat="server" class = "special" Text="Apply" OnClick="applyMathBtn_Click"/>
+											 <asp:Button ID="btnConsecutivos" runat="server" class = "special" Text="Ir" OnClick="btnConsecutivos_Click" />
+										</div>
+                                        
+									</a>
+								</article>
+                                <article class="style4">
+									<span class="image">
+										<img src="images/pic04.jpg" alt="" />
+									</span>
+									<a>
+										<h2>Aerolineas</h2>
+										<div class="content">
+											 <asp:Button ID="btnAerolineas" runat="server" class = "special" Text="Ir" OnClick="btnAerolineas_Click" />
+										</div>
+                                        
+									</a>
+								</article>
+                                       <article class="style5">
+									<span class="image">
+										<img src="images/pic05.jpg" alt="" />
+									</span>
+									<a>
+										<h2>Vuelos</h2>
+										<div class="content">
+											 <asp:Button ID="btnVuelos" runat="server" class = "special" Text="Ir" OnClick="btnVuelos_Click" />
 										</div>
                                         
 									</a>

@@ -78,8 +78,10 @@
        </div>
                <div class ="field">
             <h2><asp:Label ID="lblTipo" runat="server" Text="Label"></asp:Label>
-            :<asp:TextBox ID="txtLugar" runat="server"></asp:TextBox>
-                   </h2>
+            :</h2><asp:DropDownList ID="dplluga" runat="server" DataSourceID="SqlDataSource4" DataTextField="nombre" DataValueField="nombre">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT [nombre] FROM [PAIS]"></asp:SqlDataSource>
+                   
        </div>
 <div class ="field">
             <h2>Fecha:<asp:TextBox ID="txtFecha" runat="server" TextMode="Date"></asp:TextBox>

@@ -42,7 +42,7 @@ public partial class Tarjeta : System.Web.UI.Page
         }
         else
         {
-            WebServicePago.Service1Client servicio = new WebServicePago.Service1Client();
+            NewService.Service1Client servicio = new NewService.Service1Client();
             resultado = servicio.GetTarjeta(Int32.Parse(codTxt.Text), Int32.Parse(tarjetaTxt.Text),nombreTxt.Text,500, Int32.Parse(annoTxt.SelectedValue), Int32.Parse(mesTxt.SelectedValue), tipotarjeta);
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
 

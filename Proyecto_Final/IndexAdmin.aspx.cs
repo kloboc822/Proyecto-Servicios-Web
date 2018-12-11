@@ -42,7 +42,6 @@ public partial class IndexAdmin : System.Web.UI.Page
             }
         }
     }
-    }
 
     protected void btnSeguridad_Click(object sender, EventArgs e)
     {

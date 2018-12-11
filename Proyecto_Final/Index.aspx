@@ -27,7 +27,7 @@
 						<div class="inner">
 							<!-- Logo -->
 								<a href="About.aspx" class="logo">
-									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
+									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 							<!-- Nav -->
 								<nav>

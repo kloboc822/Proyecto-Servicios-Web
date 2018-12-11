@@ -31,7 +31,7 @@
 
 							<!-- Logo -->
 								<a href="index.aspx" class="logo">
-									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
+									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 
 							<!-- Nav -->
@@ -48,7 +48,7 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="IndexUser.aspx">Página principal</a></li>
+							<li><a href="Index.aspx">Página principal</a></li>
                             <li><a href="Login.aspx">Log Out</a></li>
                             <li><a href="About.aspx">About Us</a></li>
 						</ul>

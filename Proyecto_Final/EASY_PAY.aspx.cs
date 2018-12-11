@@ -26,7 +26,7 @@ public partial class EASY_PAY : System.Web.UI.Page
         }
         else
         {
-            WebServicePago.Service1Client servicio = new WebServicePago.Service1Client();
+            NewService.Service1Client servicio = new NewService.Service1Client();
             resultado = servicio.GetCuenta(Int32.Parse(CodTxt.Text), Int32.Parse(CuentaTxt.Text), ContrasenaTxt.Text, 500);
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
 

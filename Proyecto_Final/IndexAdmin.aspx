@@ -87,7 +87,7 @@
 									<a>
 										<h2>Consultas</h2>
 										<div class="content">
-											<asp:Button ID="btnConsultas" runat="server" class = "special" Text="Ir"/>
+											<asp:Button ID="btnConsultas" runat="server" class = "special" Text="Ir" OnClick="btnConsultas_Click"/>
 										</div>
 									</a>
 								</article>

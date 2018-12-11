@@ -175,7 +175,7 @@ public class VueloDa
         com.Parameters.AddWithValue("@id_usuario", Global.id);
         com.Parameters.AddWithValue("@cod_pais", DatosPAISES.obtenerCod_Pais(Global.lugar));
         com.Parameters.AddWithValue("@cod_vuelo", Global.cod_vuelo);
-        com.Parameters.AddWithValue("@total", Global.cantidad);
+        com.Parameters.AddWithValue("@cantidad", Global.cantidad);
         conVue.Open();
         com.ExecuteNonQuery();
         conVue.Close();

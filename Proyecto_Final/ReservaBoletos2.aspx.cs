@@ -21,9 +21,11 @@ public partial class ReservaBoletos2 : System.Web.UI.Page
         try
         {
             VueloDa.registrarReserva();
+            Response.Redirect("http://localhost:53551/IndexUser.aspx");
         }
-        catch (Exception)
+        catch (Exception s)
         {
+            string error = s.ToString();
             throw;
         }
         

@@ -140,6 +140,51 @@ public class Usuarios
 
     }
 
+    public static string comparaRespuesta(string respuesta)
+    {
+        string sql;
+        SqlDataReader rs;
+        string resultado = "";
+
+        try
+        {
+            conexion.Close();
+            conexion.Open();
+
+            sql = "SELECT * FROM USUARIO WHERE id_usuario = '" + Global.id + "'";
+            com = conexion.CreateCommand();
+            com.CommandText = sql;
+            rs = com.ExecuteReader();
+            if (rs.Read())
+            {
+                if (rs[9].ToString().Equals(respuesta))
+                {
+                    resultado = "correcto";
+                }
+                else
+                {
+                    resultado = "no";
+                }
+            }
+            else
+            {
+                resultado = "ERROR AL CARGAR RESPUESTA DE SEGURIDAD";
+            }
+            conexion.Close();
+            return resultado;
+
+
+        }
+        catch (Exception e)
+        {
+            string excepcion = e.ToString();
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+            conexion.Close();
+            return resultado;
+        }
+
+    }
+
     public static string addUser(string firstname, string surname1, string surname2, int id, string email, int tipouser, string password, string nacionalidad)
     {
         string resultado = "";

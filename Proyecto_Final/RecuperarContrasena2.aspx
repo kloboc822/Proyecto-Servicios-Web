@@ -48,7 +48,7 @@
 									</div>
                                     
 									<ul class="actions">
-                                        <asp:Button ID="aceptarBtn" runat="server" type= "submit" class="special" Text="Aceptar" />
+                                        <asp:Button ID="aceptarBtn" runat="server" type= "submit" class="special" Text="Aceptar" OnClick="aceptarBtn_Click" />
                                         <asp:Button ID="cancelBtn" runat="server" Text="Cancel" OnClick="cancelBtn_Click" />
 									</ul>
 								</form>

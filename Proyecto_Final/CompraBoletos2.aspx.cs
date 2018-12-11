@@ -18,11 +18,11 @@ public partial class CompraBoletos2 : System.Web.UI.Page
 
     protected void comprarBtn_Click(object sender, EventArgs e)
     {
-        if (metodoPagoTxt.Equals("Tarjeta"))
+        if (metodoPagoTxt.SelectedValue.Equals("Tarjeta"))
         {
             Response.Redirect("http://localhost:53551/Tarjeta.aspx");
         }
-        else if (metodoPagoTxt.Equals("EasyPay"))
+        else if (metodoPagoTxt.SelectedValue.Equals("EasyPay"))
         {
             Response.Redirect("http://localhost:53551/EASY_PAY.aspx");
         }

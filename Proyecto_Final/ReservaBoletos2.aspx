@@ -51,12 +51,6 @@
                                         </asp:SqlDataSource>
 									</div>
                                 <div class="field">
-                                    <asp:Label ID="Label1" runat="server" Text="Seleccione Metodo de Pago"></asp:Label>
-                                    <asp:DropDownList ID="metodoPagoTxt" runat="server">
-                                        <asp:ListItem>Seleccione</asp:ListItem>
-                                        <asp:ListItem>Tarjeta</asp:ListItem>
-                                        <asp:ListItem>EasyPay</asp:ListItem>
-                                    </asp:DropDownList>
                                 </div>
 									<div class="field half first">
                                         <asp:Button ID="comprarBtn" runat="server" Text="Realizar Reserva" OnClick="comprarBtn_Click" />

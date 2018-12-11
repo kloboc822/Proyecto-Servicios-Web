@@ -20,7 +20,7 @@ public partial class ReservaBoletos : System.Web.UI.Page
         {
             Global.lugar = destinoTxt.Text;
             Global.fechaSalida = fechaSalidaTxt.Text;
-            Response.Redirect("http://localhost:53551/CompraBoletos2.aspx");
+            Response.Redirect("http://localhost:53551/ReservaBoletos2.aspx");
         }
         else
         {

@@ -57,12 +57,12 @@
 									</div>
 									<div class="field half">
                                         <asp:DropDownList ID="tipouserTxt" placeholder="Type of User" runat="server">
-                                            <asp:ListItem Value="0">Administrador</asp:ListItem>
-                                            <asp:ListItem Value="1">Seguridad</asp:ListItem>
-                                            <asp:ListItem Value="2">Consecutivo</asp:ListItem>
-                                            <asp:ListItem Value="3">Mantenimiento</asp:ListItem>
-                                            <asp:ListItem Value="4">Consulta</asp:ListItem>
-                                            <asp:ListItem Value="5">Usuario Regular</asp:ListItem>
+                                            <asp:ListItem Value="1">Administrador</asp:ListItem>
+                                            <asp:ListItem Value="2">Seguridad</asp:ListItem>
+                                            <asp:ListItem Value="3">Consecutivo</asp:ListItem>
+                                            <asp:ListItem Value="4">Mantenimiento</asp:ListItem>
+                                            <asp:ListItem Value="5">Consulta</asp:ListItem>
+                                            <asp:ListItem Value="6">Usuario Regular</asp:ListItem>
                                         </asp:DropDownList>
 									</div>
                                     <div class="field half first">

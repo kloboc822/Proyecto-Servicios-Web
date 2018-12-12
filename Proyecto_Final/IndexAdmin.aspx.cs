@@ -52,4 +52,9 @@ public partial class IndexAdmin : System.Web.UI.Page
     {
         Response.Redirect("Index.aspx");
     }
+
+    protected void btnConsultas_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("IndexConsultas.aspx");
+    }
 }

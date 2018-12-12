@@ -27,7 +27,7 @@
 						<div class="inner">
 							<!-- Logo -->
 								<a href="About.aspx" class="logo">
-									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
+									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 							<!-- Nav -->
 								<nav>
@@ -114,6 +114,18 @@
 										<h2>Vuelos</h2>
 										<div class="content">
 											 <asp:Button ID="btnVuelos" runat="server" class = "special" Text="Ir" OnClick="btnVuelos_Click" />
+										</div>
+                                        
+									</a>
+								</article>
+                                       <article class="style5">
+									<span class="image">
+										<img src="images/pic11.jpg" alt="" />
+									</span>
+									<a>
+										<h2>Crear usuario</h2>
+										<div class="content">
+											 <asp:Button ID="BtnUsuario" runat="server" class = "special" Text="Ir" OnClick="BtnUsuario_Click" />
 										</div>
                                         
 									</a>

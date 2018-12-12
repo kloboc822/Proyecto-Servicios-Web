@@ -41,7 +41,7 @@
 								<h2>V-Vuelos - Pregunta de Seguridad</h2>
 								<form method="post" action="#">
 									<div class="field half first">
-                                        <asp:TextBox ID="preguntaTxt" runat="server" placeholder="First Name"></asp:TextBox>
+                                        <asp:TextBox ID="preguntaTxt" runat="server" placeholder="Pregunta de Seguridad" Enabled="False"></asp:TextBox>
 									</div>
 									<div class="field half">
                                         <asp:TextBox ID="respuestaTxt" runat="server" placeholder="Respuesta" TextMode="SingleLine"></asp:TextBox>

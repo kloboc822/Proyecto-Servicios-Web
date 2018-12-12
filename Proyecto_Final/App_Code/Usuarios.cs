@@ -185,6 +185,34 @@ public class Usuarios
 
     }
 
+    public static string reseteaContrasena(string password)
+    {
+        string resultado = "";
+
+        try
+        {
+            conexion.Close();
+
+            conexion.Open();
+            SqlCommand com = new SqlCommand("UPDATE USUARIO SET contrasena = @password where id_usuario = '"+ Global.id +"'", conexion);
+            com.Parameters.AddWithValue("password", password);
+            com.ExecuteNonQuery();
+            resultado = "Actualizacion de contrasena realizada con exito";
+            conexion.Close();
+            return resultado;
+
+
+        }
+        catch (Exception e)
+        {
+            string excepcion = e.ToString();
+            resultado = "Hubo un problema con la conexión, informe a soporte técnico";
+            conexion.Close();
+            return resultado;
+        }
+
+    }
+
     public static string addUser(string firstname, string surname1, string surname2, int id, string email, int tipouser, string password, string nacionalidad)
     {
         string resultado = "";

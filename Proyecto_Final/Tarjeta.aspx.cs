@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Web;
-using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Tarjeta : System.Web.UI.Page
 {
-    bool Valid = false;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -33,14 +29,19 @@ public partial class Tarjeta : System.Web.UI.Page
                 tipotarjeta = "A";
                 break;
             default:
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert(' Por favor elija un tipo de reunión ')", true);
                 break;
         }
+<<<<<<< HEAD
         CaptchaValidate();
         if (Valid == false)
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Por favor valide el captcha')", true);
         }
         else if (mesTxt.Text.Equals("Mes de expiración") || annoTxt.Text.Equals("Año de expiración") || nombreTxt.Text.Equals("") || tarjetaTxt.Text.Equals("") || codTxt.Text.Equals("") || TipoTxt.Text.Equals("Tipo de tarjeta"))
+=======
+        if (mesTxt.Text.Equals("Mes de expiración") || annoTxt.Text.Equals("Año de expiración") || nombreTxt.Text.Equals("") || tarjetaTxt.Text.Equals("") || codTxt.Text.Equals("") || TipoTxt.Text.Equals("Tipo de tarjeta"))
+>>>>>>> parent of 7ac6a1a... Merge branch 'master' of https://github.com/kloboc822/Proyecto-Servicios-Web
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Por favor llene todos los campos que se le solicitan')", true);
         }
@@ -50,8 +51,8 @@ public partial class Tarjeta : System.Web.UI.Page
         }
         else
         {
-            NewService.Service1Client servicio = new NewService.Service1Client();
-            resultado = servicio.GetTarjeta(Int32.Parse(codTxt.Text), Int32.Parse(tarjetaTxt.Text), nombreTxt.Text, 500, Int32.Parse(annoTxt.SelectedValue), Int32.Parse(mesTxt.SelectedValue), tipotarjeta);
+            WebServicePago.Service1Client servicio = new WebServicePago.Service1Client();
+            resultado = servicio.GetTarjeta(Int32.Parse(codTxt.Text), Int32.Parse(tarjetaTxt.Text),nombreTxt.Text,500, Int32.Parse(annoTxt.SelectedValue), Int32.Parse(mesTxt.SelectedValue), tipotarjeta);
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
 
             try
@@ -67,55 +68,5 @@ public partial class Tarjeta : System.Web.UI.Page
             }
 
         }
-    }
-    public bool CaptchaValidate()
-    {
-        string ResponseByGoogle = Request["g-recaptcha-response"];
-
-        string CaptchaSecretKey = "6LfnN4AUAAAAAJm-GDYwST1UBuMSJKLAypBRqLB5";
-        
-
-        HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://www.google.com/recaptcha/api/siteverify?secret=" + CaptchaSecretKey + "&response=" + ResponseByGoogle);
-
-        try
-        {
-            using (WebResponse wResponse = req.GetResponse())
-            {
-                using (StreamReader readStream = new
-                    StreamReader(wResponse.GetResponseStream()))
-                {
-                    string jsonResponse = readStream.ReadToEnd();
-
-                    JavaScriptSerializer js = new JavaScriptSerializer();
-                    CaptchaValidate data = js.Deserialize<CaptchaValidate>(jsonResponse);
-
-                    Valid = Convert.ToBoolean(data.success);
-
-
-                }
-            }
-
-            return Valid;
-        }
-        catch (WebException ex)
-        {
-            throw ex;
-        }
-    }
-    protected void btntest_Click(object sender, EventArgs e)
-    {
-        if (CaptchaValidate() == true)
-        {
-
-            lbltest.Text = "Validación correcta";
-        }
-
-        else if (CaptchaValidate() == false)
-        {
-
-            lbltest.Text = "Validación incorrecta";
-
-        }
-
     }
 }

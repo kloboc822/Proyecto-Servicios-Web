@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="EASY_PAY.aspx.cs" Inherits="EASY_PAY" %>
-<%@ Register TagPrefix="recaptcha" Namespace="Recaptcha" Assembly="Recaptcha" %>  
 
 <!DOCTYPE html>
 
@@ -15,7 +14,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <html>
+            <<html>
 	<head>
 		<title>Generic - Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
@@ -25,7 +24,6 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<body>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -35,8 +33,8 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="IndexUser.aspx" class="logo">
-									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
+								<a href="index.aspx" class="logo">
+									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 
 							<!-- Nav -->
@@ -53,9 +51,11 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="IndexUser.aspx">Página principal</a></li>
-                            <li><a href="Login.aspx">Log Out</a></li>
-                            <li><a href="About.aspx">About Us</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
 						</ul>
 					</nav>
 
@@ -73,11 +73,6 @@
                             <asp:TextBox ID="ContrasenaTxt" runat="server" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
 						</div>
                         <br />
-                        <div class="field">
-                                    <div class="g-recaptcha" data-sitekey="6LfnN4AUAAAAAObMA2Er2Mgb7EdqdgtTiSOoBK1W"></div>
-                                    <asp:Button ID="btntest" runat="server" OnClick="btntest_Click" Text="Enviar" Visible="False" />
-                                    <asp:Label ID="lbltest" runat="server" Text="Label" Visible="False"></asp:Label>                           
-                        </div>
                         <div class="first half field">
                                 <asp:Button ID="pagar" class="special" runat="server" Text="Realizar pago" OnClick="pagar_Click"  />
                             </div>

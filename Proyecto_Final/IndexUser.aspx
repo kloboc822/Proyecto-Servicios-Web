@@ -11,7 +11,7 @@
         <div>
             <html>
 	<head>
-		<title>V-Vuelos Bienvenido!</title>
+		<title>V-Vuelos-Menu de Administracion</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -26,8 +26,8 @@
 					<header id="header">
 						<div class="inner">
 							<!-- Logo -->
-								<a href="IndexUser.aspx" class="logo">
-									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
+								<a href="About.aspx" class="logo">
+									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 							<!-- Nav -->
 								<nav>
@@ -42,7 +42,7 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="IndexUser.aspx">Página principal</a></li>
+							<li><a href="IndexAdmin.aspx">Página principal</a></li>
                             <li><a href="Login.aspx">Log Out</a></li>
                             <li><a href="About.aspx">About Us</a></li>
 						</ul>
@@ -103,6 +103,7 @@
 					<footer id="footer">
 						<div class="inner">
                            
+                            --%>
 							<ul class="copyright">
 								<li>&copy; V-Vuelos Inc. All rights reserved</li><%--<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>--%>
 							</ul>

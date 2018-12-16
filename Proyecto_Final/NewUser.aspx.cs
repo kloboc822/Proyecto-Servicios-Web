@@ -28,12 +28,21 @@ public partial class NewUser : System.Web.UI.Page
         {
             if (idTxt.Text.Equals("") || passwordTxt.Text.Equals("") || firstnameTxt.Text.Equals("") || surname1Txt.Text.Equals("") || surname2Txt.Text.Equals("") || emailTxt.Text.Equals(""))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('All spaces must have info.')", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('No pueden haber campos vacíos')", true);
             }
             else
             {
-                string resultado = Usuarios.addUser(firstnameTxt.Text, surname1Txt.Text, surname2Txt.Text, Int32.Parse(idTxt.Text), emailTxt.Text, Int32.Parse(tipouserTxt.Text), passwordTxt.Text, nacionalidadTxt.Text);
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
+                string resultado;
+                resultado = Usuarios.verificaUsuario(Int32.Parse(idTxt.Text));
+                if (resultado.Equals("exitoso"))
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Ya existe un usuario ligado a este ID')", true);
+                }
+                else
+                {
+                    resultado = Usuarios.addUser(firstnameTxt.Text, surname1Txt.Text, surname2Txt.Text, Int32.Parse(idTxt.Text), emailTxt.Text, Int32.Parse(tipouserTxt.Text), passwordTxt.Text, nacionalidadTxt.Text, PreguntaTxt.SelectedValue, RespuestaTxt.Text);
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
+                }
             }
         }
         catch (Exception)

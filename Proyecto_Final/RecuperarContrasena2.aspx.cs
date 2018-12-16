@@ -10,6 +10,7 @@ public partial class RecuperarContrasena2 : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         preguntaTxt.Text = Usuarios.obtienePregunta();
+        preguntaTxt.Enabled = false;
     }
 
     protected void cancelBtn_Click(object sender, EventArgs e)

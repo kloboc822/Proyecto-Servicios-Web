@@ -213,14 +213,14 @@ public class Usuarios
 
     }
 
-    public static string addUser(string firstname, string surname1, string surname2, int id, string email, int tipouser, string password, string nacionalidad)
+    public static string addUser(string firstname, string surname1, string surname2, int id, string email, int tipouser, string password, string nacionalidad, string pregunta, string respuesta)
     {
         string resultado = "";
         try
         {
             conexion.Close();
             SqlCommand com2;
-            com2 = new SqlCommand("INSERT INTO USUARIO(id_usuario, nombre, apellido1, apellido2, correo, contrasena, nacionalidad, rol) VALUES(@id_usuario, @nombre, @apellido1, @apellido2, @correo, @contrasena, @nacionalidad, @rol)", conexion);
+            com2 = new SqlCommand("INSERT INTO USUARIO(id_usuario, nombre, apellido1, apellido2, correo, contrasena, nacionalidad, rol) VALUES(@id_usuario, @nombre, @apellido1, @apellido2, @correo, @contrasena, @nacionalidad, @rol, @pregunta, @respuesta)", conexion);
             com2.Parameters.AddWithValue("@id_usuario", id);
             com2.Parameters.AddWithValue("@nombre", firstname);
             com2.Parameters.AddWithValue("@apellido1", surname1);
@@ -229,6 +229,8 @@ public class Usuarios
             com2.Parameters.AddWithValue("@contrasena", password);
             com2.Parameters.AddWithValue("@nacionalidad", nacionalidad);
             com2.Parameters.AddWithValue("@rol", tipouser);
+            com2.Parameters.AddWithValue("@pregunta", pregunta);
+            com2.Parameters.AddWithValue("@respuesta", respuesta);
 
             conexion.Open();
             com2.ExecuteNonQuery();

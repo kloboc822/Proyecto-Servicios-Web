@@ -71,6 +71,16 @@
                                     <div class="field half">
                                         <asp:TextBox ID="nacionalidadTxt" runat="server" placeholder="Nacionalidad" TextMode="SingleLine"></asp:TextBox>
 									</div>
+                                    <div class="field half">
+                                        <asp:DropDownList ID="PreguntaTxt" runat="server">
+                                            <asp:ListItem>Seleccione una pregunta de seguridad</asp:ListItem>
+                                            <asp:ListItem>Cómo se llama mi primer mascota</asp:ListItem>
+                                            <asp:ListItem>Cómo se llamaba mi profesor de primaria</asp:ListItem>
+                                        </asp:DropDownList>
+									</div>
+                                    <div class="field half">
+                                        <asp:TextBox ID="RespuestaTxt" runat="server" placeholder="Respuesta de seguridad" TextMode="SingleLine"></asp:TextBox>
+									</div>
 									<ul class="actions">
                                         <asp:Button ID="createBtn" runat="server" type= "submit" class="special" Text="Create User" OnClick="createBtn_Click" />
                                         <asp:Button ID="cancelBtn" runat="server" Text="Cancel" OnClick="cancelBtn_Click" />

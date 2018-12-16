@@ -1,17 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="IndexUser.aspx.cs" Inherits="IndexUser" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MostrarAero.aspx.cs" Inherits="MostrarAero" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <html>
+            <<html>
 	<head>
-		<title>V-Vuelos Bienvenido!</title>
+		<title>Generic - Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -22,19 +22,23 @@
 	<body>
 		<!-- Wrapper -->
 			<div id="wrapper">
+
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
+
 							<!-- Logo -->
-								<a href="IndexUser.aspx" class="logo">
+								<a href="IndexConsultas.aspx" class="logo">
 									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
+
 							<!-- Nav -->
 								<nav>
 									<ul>
-										<li><a href="#menu">Menú</a></li>
+										<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>
+
 						</div>
 					</header>
 
@@ -42,72 +46,38 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="IndexUser.aspx">Página principal</a></li>
+							<li><a href="IndexConsultas.aspx">Página principal</a></li>
                             <li><a href="Login.aspx">Log Out</a></li>
                             <li><a href="About.aspx">About Us</a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<header>
-								<h1>Menú</h1>
-								<p>Por favor, elija una opcion</p>
-							</header>
-							
-                            <!--EXAMENES -->
-                            <section class="tiles">
-                              	<article class="style1">
-									<span class="image">                                        
-										<img src="images/pic14.jpg" alt="" />
-									</span>
-									<a> 
-										<h2>Comprar Boletos</h2>
-										<div class="content">
-											 <asp:Button ID="comprarBtn" runat="server" class = "special" Text="Ir" OnClick="comprarBtn_Click"/>
-										</div>
-                                       
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<a>
-										<h2>Reservar Boletos</h2>
-										<div class="content">
-											<asp:Button ID="reservarBtn" runat="server" class = "special" Text="Ir" OnClick="reservarBtn_Click"/>
-										</div>
-                                         
-									</a>
-								</article>
-								<%--<article class="style3">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<a>
-										<h2>Math</h2>
-										<div class="content">
-											 <asp:Button ID="applyMathBtn" runat="server" class = "special" Text="Apply" OnClick="applyMathBtn_Click"/>
-										</div>
-                                        
-									</a>
-								</article>--%>
-							</section>
-
+                <asp:Panel ID="main" runat="server">
+                    <asp:Panel ID="Panel1" class="inner" runat="server">
+                        <h1>Registros de Aerolínea</h1>
+						<div class="field">
+                            <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="cod_aerol" DataSourceID="SqlDataSource1"  >
+                                <Columns>
+                                    <asp:BoundField DataField="cod_aerol" HeaderText="cod_aerol" ReadOnly="True" SortExpression="cod_aerol" />
+                                    <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
+                                </Columns>
+                            </asp:GridView>
+						    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT [cod_aerol], [nombre] FROM [AEROLINEA]"></asp:SqlDataSource>
 						</div>
-					</div>
+                        <br />
+                        <div class="field align-center">
+                                <asp:Button ID="volver" runat="server" Text="Volver" OnClick="volver_Click"  />
+                            </div>
+                        <div class="half">
+                            </div>
+                            <div class="first half field">
+                        </div>
+                    </asp:Panel>
+                </asp:Panel>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-                           
-							<ul class="copyright">
-								<li>&copy; V-Vuelos Inc. All rights reserved</li><%--<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>--%>
-							</ul>
-						</div>
-					</footer>
+                
 			</div>
 
 		<!-- Scripts -->

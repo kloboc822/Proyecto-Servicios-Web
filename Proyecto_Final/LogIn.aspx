@@ -92,7 +92,7 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
       
-      window.location.assign("IndexAdmin.aspx");
+      window.location.assign("IndexUser.aspx");
       
   }
  

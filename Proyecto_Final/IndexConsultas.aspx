@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="IndexUser.aspx.cs" Inherits="IndexUser" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="IndexConsultas.aspx.cs" Inherits="IndexConsultas" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
         <div>
             <html>
 	<head>
-		<title>V-Vuelos Bienvenido!</title>
+		<title>V-Vuelos-Menu de Consultas</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -26,7 +26,7 @@
 					<header id="header">
 						<div class="inner">
 							<!-- Logo -->
-								<a href="IndexUser.aspx" class="logo">
+								<a href="IndexAdmin.aspx" class="logo">
 									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 							<!-- Nav -->
@@ -42,7 +42,7 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="IndexUser.aspx">Página principal</a></li>
+							<li><a href="IndexAdmin.aspx">Página principal</a></li>
                             <li><a href="Login.aspx">Log Out</a></li>
                             <li><a href="About.aspx">About Us</a></li>
 						</ul>
@@ -53,7 +53,7 @@
 						<div class="inner">
 							<header>
 								<h1>Menú</h1>
-								<p>Por favor, elija una opcion</p>
+								<p>Por favor, elija una opción</p>
 							</header>
 							
                             <!--EXAMENES -->
@@ -63,9 +63,9 @@
 										<img src="images/pic14.jpg" alt="" />
 									</span>
 									<a> 
-										<h2>Comprar Boletos</h2>
+										<h2>Consultar Bitácora</h2>
 										<div class="content">
-											 <asp:Button ID="comprarBtn" runat="server" class = "special" Text="Ir" OnClick="comprarBtn_Click"/>
+											 <asp:Button ID="bitacBtn" runat="server" class = "special" Text="Ir" OnClick="bitacBtn_Click" />
 										</div>
                                        
 									</a>
@@ -75,9 +75,21 @@
 										<img src="images/pic02.jpg" alt="" />
 									</span>
 									<a>
-										<h2>Reservar Boletos</h2>
+										<h2>Consultar Aerolíneas</h2>
 										<div class="content">
-											<asp:Button ID="reservarBtn" runat="server" class = "special" Text="Ir" OnClick="reservarBtn_Click"/>
+											<asp:Button ID="aeroBtn" runat="server" class = "special" Text="Ir" OnClick="aeroBtn_Click"/>
+										</div>
+                                         
+									</a>
+								</article>
+                                <article class="style2">
+									<span class="image">
+										<img src="images/pic11.jpg" alt="" />
+									</span>
+									<a>
+										<h2>Consultar Puertas</h2>
+										<div class="content">
+											<asp:Button ID="puertaBtn" runat="server" class = "special" Text="Ir" OnClick="puertaBtn_Click" />
 										</div>
                                          
 									</a>
@@ -135,3 +147,4 @@ function googleTranslateElementInit() {
 </footer>
 </body>
 </html>
+

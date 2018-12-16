@@ -22,20 +22,11 @@
 					<header id="header">
 						<div class="inner">
 							<!-- Logo -->
-								<a href="IndexUser.aspx" class="logo">
-									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
+								<a href="About.aspx" class="logo">
+									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 						</div>
 					</header>
-                				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="IndexUser.aspx">Página principal</a></li>
-                            <li><a href="Login.aspx">Log Out</a></li>
-                            <li><a href="About.aspx">About Us</a></li>
-						</ul>
-					</nav>
                 </div>
 				<!-- Footer -->
 					<footer id="footer">

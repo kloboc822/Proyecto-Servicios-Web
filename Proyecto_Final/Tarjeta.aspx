@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Tarjeta.aspx.cs" Inherits="Tarjeta" %>
-<%@ Register TagPrefix="recaptcha" Namespace="Recaptcha" Assembly="Recaptcha" %>  
 
 <!DOCTYPE html>
 
@@ -15,7 +14,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <html>
+            <<html>
 	<head>
 		<title>Generic - Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
@@ -25,7 +24,6 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
-           <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<body>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -35,8 +33,8 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="IndexUser.aspx" class="logo">
-									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
+								<a href="index.aspx" class="logo">
+									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 
 							<!-- Nav -->
@@ -53,9 +51,11 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="IndexUser.aspx">Página principal</a></li>
-                            <li><a href="Login.aspx">Log Out</a></li>
-                            <li><a href="About.aspx">About Us</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
 						</ul>
 					</nav>
 
@@ -84,7 +84,8 @@
                                  <asp:ListItem>American Express</asp:ListItem>
                              </asp:DropDownList>
 						</div>
-                        <br />
+                        <br>
+                         <br></br>
                         <h2>Seleccione el mes y año de expiración de la tarjeta</h2>
                         <div class="field half first">
                             <asp:DropDownList ID="mesTxt" runat="server">
@@ -117,9 +118,9 @@
                             </asp:DropDownList>
                         </div>
                         <div class="field">
-                                    <div class="g-recaptcha" data-sitekey="6LfnN4AUAAAAAObMA2Er2Mgb7EdqdgtTiSOoBK1W"></div>
-                                    <asp:Button ID="btntest" runat="server" OnClick="btntest_Click" Text="Enviar" Visible="False" />
-                                    <asp:Label ID="lbltest" runat="server" Text="Label" Visible="False"></asp:Label>                           
+                            <br>
+                            <br></br>
+                            </br>
                         </div>
                         <div class="first half field">
                             <asp:Button ID="pagar" runat="server" class="special" OnClick="pagar_Click" Text="Realizar pago" />
@@ -127,7 +128,7 @@
                         <div class="second half field">
                             <asp:Button ID="cancelar" runat="server" Text="Cancelar" />
                         </div>
-                         <br />
+                         </br>
                     </asp:Panel>
                 </asp:Panel>
 

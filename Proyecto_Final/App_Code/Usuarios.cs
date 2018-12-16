@@ -218,6 +218,7 @@ public class Usuarios
         string resultado = "";
         try
         {
+            conexion.Close();
             SqlCommand com2;
             com2 = new SqlCommand("INSERT INTO USUARIO(id_usuario, nombre, apellido1, apellido2, correo, contrasena, nacionalidad, rol) VALUES(@id_usuario, @nombre, @apellido1, @apellido2, @correo, @contrasena, @nacionalidad, @rol)", conexion);
             com2.Parameters.AddWithValue("@id_usuario", id);

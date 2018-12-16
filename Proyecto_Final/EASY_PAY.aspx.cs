@@ -20,6 +20,7 @@ public partial class EASY_PAY : System.Web.UI.Page
     {
         string resultado = "";
         int temp = 0;
+        CaptchaValidate();
         if (Valid == false)
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Por favor valide el captcha')", true);

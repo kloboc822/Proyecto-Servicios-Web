@@ -35,6 +35,7 @@ public partial class Tarjeta : System.Web.UI.Page
             default:
                 break;
         }
+        CaptchaValidate();
         if (Valid == false)
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Por favor valide el captcha')", true);

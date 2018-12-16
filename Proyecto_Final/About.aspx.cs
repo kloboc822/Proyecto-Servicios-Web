@@ -11,4 +11,19 @@ public partial class About : System.Web.UI.Page
     {
 
     }
+
+    protected void contactoBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("https://www.facebook.com/jorge.solanotrejos");
+    }
+
+    protected void contacto2Btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("https://www.facebook.com/jorge.ugalde.545");
+    }
+
+    protected void contacto3Btn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("https://www.facebook.com/klobocampos");
+    }
 }

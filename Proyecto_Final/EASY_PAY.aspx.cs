@@ -17,12 +17,16 @@ public partial class EASY_PAY : System.Web.UI.Page
         string resultado = "";
         int temp = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
         CaptchaValidate();
         if (Valid == false)
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Por favor valide el captcha')", true);
         }
         else if (CodTxt.Text.Equals("") || CuentaTxt.Text.Equals(""))
+=======
+        if (CodTxt.Text.Equals("") || CuentaTxt.Text.Equals(""))
+>>>>>>> parent of 7ac6a1a... Merge branch 'master' of https://github.com/kloboc822/Proyecto-Servicios-Web
 =======
         if (CodTxt.Text.Equals("") || CuentaTxt.Text.Equals(""))
 >>>>>>> parent of 7ac6a1a... Merge branch 'master' of https://github.com/kloboc822/Proyecto-Servicios-Web

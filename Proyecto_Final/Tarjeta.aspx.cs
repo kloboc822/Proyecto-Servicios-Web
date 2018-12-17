@@ -33,16 +33,12 @@ public partial class Tarjeta : System.Web.UI.Page
                 break;
         }
 <<<<<<< HEAD
-<<<<<<< HEAD
         CaptchaValidate();
         if (Valid == false)
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Por favor valide el captcha')", true);
         }
         else if (mesTxt.Text.Equals("Mes de expiración") || annoTxt.Text.Equals("Año de expiración") || nombreTxt.Text.Equals("") || tarjetaTxt.Text.Equals("") || codTxt.Text.Equals("") || TipoTxt.Text.Equals("Tipo de tarjeta"))
-=======
-        if (mesTxt.Text.Equals("Mes de expiración") || annoTxt.Text.Equals("Año de expiración") || nombreTxt.Text.Equals("") || tarjetaTxt.Text.Equals("") || codTxt.Text.Equals("") || TipoTxt.Text.Equals("Tipo de tarjeta"))
->>>>>>> parent of 7ac6a1a... Merge branch 'master' of https://github.com/kloboc822/Proyecto-Servicios-Web
 =======
         if (mesTxt.Text.Equals("Mes de expiración") || annoTxt.Text.Equals("Año de expiración") || nombreTxt.Text.Equals("") || tarjetaTxt.Text.Equals("") || codTxt.Text.Equals("") || TipoTxt.Text.Equals("Tipo de tarjeta"))
 >>>>>>> parent of 7ac6a1a... Merge branch 'master' of https://github.com/kloboc822/Proyecto-Servicios-Web
